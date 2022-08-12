@@ -8,11 +8,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 private val DarkColorScheme = darkColorScheme(
-    surface = BurntOrange
+    surface = Color.White,
 )
 
 private val LightColorScheme = lightColorScheme(
-    surface = BurntOrange
+    surface = Color.White
 )
 
 @Composable

@@ -9,6 +9,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import kotlinx.coroutines.delay
 
@@ -16,6 +17,7 @@ import kotlinx.coroutines.delay
 fun LoadingDotText(
     text: String? = null,
     style: TextStyle = LocalTextStyle.current,
+    color: Color = LocalContentColor.current,
     dotCount: Int = 3,
     delayBetweenDots: Long = 500,
 ) {
@@ -35,20 +37,26 @@ fun LoadingDotText(
             Text(
                 modifier = Modifier.alignByBaseline(),
                 text = dotText.value,
-                color = LocalContentColor.current.copy(alpha = 0f),
+                color = color.copy(alpha = 0f),
                 style = style
             )
             Text(
                 text = text,
-                style = style
+                style = style,
+                color = color
             )
             Text(
                 modifier = Modifier.alignByBaseline(),
                 text = dotText.value,
-                style = style
+                style = style,
+                color = color
             )
         }else{
-            Text(text = dotText.value)
+            Text(
+                text = dotText.value,
+                style = style,
+                color = color
+            )
         }
     }
 }
