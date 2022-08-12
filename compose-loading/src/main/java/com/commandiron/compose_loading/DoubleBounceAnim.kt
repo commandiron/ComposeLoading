@@ -60,7 +60,7 @@ fun DoubleBounceAnim(
         )
     }
     Box(
-        modifier = modifier.size(60.dp),
+        modifier = modifier,
         contentAlignment = Alignment.Center
     ){
         Surface(

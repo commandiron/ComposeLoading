@@ -12,179 +12,186 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import kotlinx.coroutines.delay
 import kotlin.math.*
 
 @Composable
 fun CircleDotAnim(
     modifier: Modifier = Modifier,
-    circleSize: Dp = 28.dp,
+    size: Dp = 24.dp,
     color: Color = MaterialTheme.colorScheme.surface,
+    circleRatio: Float = 0.35f,
+    delayBetweenDotsMillis: Int = 75,
+    durationMillis: Int = 2700
 ) {
-    val circleAnim1 = remember {
-        Animatable(0f)
-    }
-    var targetValue1 by remember { mutableStateOf(1.75f)}
-    LaunchedEffect(key1 = Unit){
-        delay(375)
-        while (true){
-            circleAnim1.animateTo(
-                targetValue = targetValue1,
-                animationSpec = tween(
-                    durationMillis = 2750,
-                    delayMillis = 0,
-                    easing = FastOutSlowInEasing
-                )
-            )
-            targetValue1 += 1.75f
-        }
-    }
-    val circleAnim2 = remember {
-        Animatable(0f)
-    }
-    var targetValue2 by remember { mutableStateOf(1.75f)}
-    LaunchedEffect(key1 = Unit){
-        delay(300)
-        while (true){
-            circleAnim2.animateTo(
-                targetValue = targetValue2,
-                animationSpec = tween(
-                    durationMillis = 2750,
-                    delayMillis = 0,
-                    easing = FastOutSlowInEasing
-                )
-            )
-            targetValue2 += 1.75f
-        }
-    }
-    val circleAnim3 = remember {
-        Animatable(0f)
-    }
-    var targetValue3 by remember { mutableStateOf(1.75f)}
-    LaunchedEffect(key1 = Unit){
-        delay(225)
-        while (true){
-            circleAnim3.animateTo(
-                targetValue = targetValue3,
-                animationSpec = tween(
-                    durationMillis = 2750,
-                    delayMillis = 0,
-                    easing = FastOutSlowInEasing
-                )
-            )
-            targetValue3 += 1.75f
-        }
-    }
-    val circleAnim4 = remember {
-        Animatable(0f)
-    }
-    var targetValue4 by remember { mutableStateOf(1.75f)}
-    LaunchedEffect(key1 = Unit){
-        delay(150)
-        while (true){
-            circleAnim4.animateTo(
-                targetValue = targetValue4,
-                animationSpec = tween(
-                    durationMillis = 2750,
-                    delayMillis = 0,
-                    easing = FastOutSlowInEasing
-                )
-            )
-            targetValue4 += 1.75f
-        }
-    }
-    val circleAnim5 = remember {
-        Animatable(0f)
-    }
-    var targetValue5 by remember { mutableStateOf(1.75f)}
-    LaunchedEffect(key1 = Unit){
-        delay(75)
-        while (true){
-            circleAnim5.animateTo(
-                targetValue = targetValue5,
-                animationSpec = tween(
-                    durationMillis = 2750,
-                    delayMillis = 0,
-                    easing = FastOutSlowInEasing
-                )
-            )
-            targetValue5 += 1.75f
-        }
-    }
-    val circleAnim6 = remember {
-        Animatable(0f)
-    }
-    var targetValue6 by remember { mutableStateOf(1.75f)}
-    LaunchedEffect(key1 = Unit){
-        while (true){
-            circleAnim6.animateTo(
-                targetValue = targetValue6,
-                animationSpec = tween(
-                    durationMillis = 2750,
-                    delayMillis = 0,
-                    easing = FastOutSlowInEasing
-                )
-            )
-            targetValue6 += 1.75f
-        }
-    }
+    val transition = rememberInfiniteTransition()
 
+    val circleAnimation1 by transition.circleDotPathTransition(
+        durationMillis = durationMillis
+    )
+    val circleAnimation2 by transition.circleDotPathTransition(
+        durationMillis = durationMillis,
+        offsetMillis = delayBetweenDotsMillis
+    )
+    val circleAnimation3 by transition.circleDotPathTransition(
+        durationMillis = durationMillis,
+        offsetMillis = delayBetweenDotsMillis * 2
+    )
+    val circleAnimation4 by transition.circleDotPathTransition(
+        durationMillis = durationMillis,
+        offsetMillis = delayBetweenDotsMillis * 3
+    )
+    val circleAnimation5 by transition.circleDotPathTransition(
+        durationMillis = durationMillis,
+        offsetMillis = delayBetweenDotsMillis * 4
+    )
+    val circleAnimation6 by transition.circleDotPathTransition(
+        durationMillis = durationMillis,
+        offsetMillis = delayBetweenDotsMillis * 5
+    )
+    val circleRadiusMultiplier3 by transition.radiusMultiplierTransition(
+        initialValue = 0.512f,
+        targetValue = 0.35f,
+        durationMillis = durationMillis / 2,
+        offsetMillis = delayBetweenDotsMillis * 3
+    )
+    val circleRadiusMultiplier4 by transition.radiusMultiplierTransition(
+        initialValue = 0.64f,
+        targetValue = 0.35f,
+        durationMillis = durationMillis / 2,
+        offsetMillis = delayBetweenDotsMillis * 2
+    )
+    val circleRadiusMultiplier5 by transition.radiusMultiplierTransition(
+        initialValue = 0.8f,
+        targetValue = 0.35f,
+        durationMillis = durationMillis / 2,
+        offsetMillis = delayBetweenDotsMillis
+    )
+    val circleRadiusMultiplier6 by transition.radiusMultiplierTransition(
+        initialValue = 1f,
+        targetValue = 0.35f,
+        durationMillis = durationMillis / 2,
+    )
     Box(
-        modifier = modifier.size(60.dp),
+        modifier = modifier,
         contentAlignment = Alignment.Center
     ){
-        Canvas(modifier = Modifier.size(circleSize)){
+        Canvas(modifier = Modifier.size(size)){
 
-            val radius = (size.height / 2)
+            val radius = (this.size.height / 2)
+            val radiusCommon = this.size.height / 5 * circleRatio
 
-            val angleInDegrees1 = (circleAnim1.value * 360.0)
-            val x1 = -(radius * sin(Math.toRadians(angleInDegrees1))).toFloat() + (size.width / 2)
-            val y1 = (radius * cos(Math.toRadians(angleInDegrees1))).toFloat() + (size.height / 2)
+
+            val angle1 = (circleAnimation1 * 360.0)
+            val offsetX1 = -(radius * sin(Math.toRadians(angle1))).toFloat() + (this.size.width / 2)
+            val offsetY1 = (radius * cos(Math.toRadians(angle1))).toFloat() + (this.size.height / 2)
             drawCircle(
                 color = color,
-                radius = 16f,
-                center = Offset(x1,  y1)
+                radius = radiusCommon,
+                center = Offset(offsetX1,  offsetY1)
             )
-            val angleInDegrees2 = (circleAnim2.value * 360.0)
-            val x2 = -(radius * sin(Math.toRadians(angleInDegrees2))).toFloat() + (size.width / 2)
-            val y2 = (radius * cos(Math.toRadians(angleInDegrees2))).toFloat() + (size.height / 2)
+
+            val angle2 = (circleAnimation2 * 360.0)
+            val offsetX2 = -(radius * sin(Math.toRadians(angle2))).toFloat() + (this.size.width / 2)
+            val offsetY2 = (radius * cos(Math.toRadians(angle2))).toFloat() + (this.size.height / 2)
             drawCircle(
                 color = color,
-                radius = 12f,
-                center = Offset(x2,  y2)
+                radius = radiusCommon,
+                center = Offset(offsetX2,  offsetY2)
             )
-            val angleInDegrees3 = (circleAnim3.value * 360.0)
-            val x3 = -(radius * sin(Math.toRadians(angleInDegrees3))).toFloat() + (size.width / 2)
-            val y3 = (radius * cos(Math.toRadians(angleInDegrees3))).toFloat() + (size.height / 2)
+
+            val radius3 = circleRadiusMultiplier3 * this.size.height / 5
+            val angle3 = (circleAnimation3 * 360.0)
+            val offsetX3 = -(radius * sin(Math.toRadians(angle3))).toFloat() + (this.size.width / 2)
+            val offsetY3 = (radius * cos(Math.toRadians(angle3))).toFloat() + (this.size.height / 2)
             drawCircle(
                 color = color,
-                radius = 8f,
-                center = Offset(x3,  y3)
+                radius = radius3,
+                center = Offset(offsetX3,  offsetY3)
             )
-            val angleInDegrees4 = (circleAnim4.value * 360.0)
-            val x4 = -(radius * sin(Math.toRadians(angleInDegrees4))).toFloat() + (size.width / 2)
-            val y4 = (radius * cos(Math.toRadians(angleInDegrees4))).toFloat() + (size.height / 2)
+
+            val radius4 = circleRadiusMultiplier4 * this.size.height / 5
+            val angle4 = (circleAnimation4* 360.0)
+            val offsetX4 = -(radius * sin(Math.toRadians(angle4))).toFloat() + (this.size.width / 2)
+            val offsetY4 = (radius * cos(Math.toRadians(angle4))).toFloat() + (this.size.height / 2)
             drawCircle(
                 color = color,
-                radius = 8f,
-                center = Offset(x4,  y4)
+                radius = radius4,
+                center = Offset(offsetX4,  offsetY4)
             )
-            val angleInDegrees5 = (circleAnim5.value * 360.0)
-            val x5 = -(radius * sin(Math.toRadians(angleInDegrees5))).toFloat() + (size.width / 2)
-            val y5 = (radius * cos(Math.toRadians(angleInDegrees5))).toFloat() + (size.height / 2)
+
+            val radius5 = circleRadiusMultiplier5 * this.size.height / 5
+            val angle5 = (circleAnimation5 * 360.0)
+            val offsetX5 = -(radius * sin(Math.toRadians(angle5))).toFloat() + (this.size.width / 2)
+            val offsetY5 = (radius * cos(Math.toRadians(angle5))).toFloat() + (this.size.height / 2)
             drawCircle(
                 color = color,
-                radius = 8f,
-                center = Offset(x5,  y5)
+                radius = radius5,
+                center = Offset(offsetX5,  offsetY5)
             )
-            val angleInDegrees6 = (circleAnim6.value * 360.0)
-            val x6 = -(radius * sin(Math.toRadians(angleInDegrees6))).toFloat() + (size.width / 2)
-            val y6 = (radius * cos(Math.toRadians(angleInDegrees6))).toFloat() + (size.height / 2)
+
+            val radius6 = circleRadiusMultiplier6 * this.size.height / 5
+            val angle6 = (circleAnimation6 * 360.0)
+            val offsetX6 = -(radius * sin(Math.toRadians(angle6))).toFloat() + (this.size.width / 2)
+            val offsetY6 = (radius * cos(Math.toRadians(angle6))).toFloat() + (this.size.height / 2)
             drawCircle(
                 color = color,
-                radius = 8f,
-                center = Offset(x6,  y6)
+                radius = radius6,
+                center = Offset(offsetX6,  offsetY6)
             )
         }
     }
+}
+
+@Composable
+internal fun InfiniteTransition.circleDotPathTransition(
+    durationMillis: Int,
+    offsetMillis: Int = 0,
+    easing: Easing = FastOutSlowInEasing
+): State<Float> {
+    return animateFloat(
+        initialValue = 0f,
+        targetValue = 1f,
+        animationSpec = infiniteRepeatable(
+            animation = keyframes {
+                this.durationMillis = durationMillis * 4
+                0f at 0 with easing
+                1.75f at durationMillis with easing
+                3.5f at durationMillis * 2 with easing
+                5.25f at durationMillis * 3 with easing
+                7f at durationMillis * 4 with easing
+            },
+            RepeatMode.Restart,
+            StartOffset(offsetMillis)
+        )
+    )
+}
+
+@Composable
+internal fun InfiniteTransition.radiusMultiplierTransition(
+    initialValue: Float,
+    targetValue: Float,
+    durationMillis: Int,
+    offsetMillis: Int = 0,
+    easing: Easing = FastOutSlowInEasing
+): State<Float> {
+    return animateFloat(
+        initialValue = initialValue,
+        targetValue = targetValue,
+        animationSpec = infiniteRepeatable(
+            animation = keyframes {
+                this.durationMillis = durationMillis * 8
+                initialValue at 0 with easing
+                targetValue at durationMillis with easing
+                initialValue at durationMillis * 2 with easing
+                targetValue at durationMillis * 3 with easing
+                initialValue at durationMillis * 4 with easing
+                targetValue at durationMillis * 5 with easing
+                initialValue at durationMillis * 6 with easing
+                targetValue at durationMillis * 7 with easing
+                initialValue at durationMillis * 8 with easing
+            },
+            RepeatMode.Restart,
+            StartOffset(offsetMillis = offsetMillis)
+        )
+    )
 }

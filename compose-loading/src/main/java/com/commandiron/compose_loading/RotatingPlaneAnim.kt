@@ -1,8 +1,6 @@
 package com.commandiron.compose_loading
 
 import androidx.compose.animation.core.*
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.size
@@ -27,7 +25,7 @@ fun RotatingPlaneAnim(
     size: DpSize = DpSize(32.dp, 32.dp),
     color: Color = MaterialTheme.colorScheme.surface,
     shape: Shape = Shapes.None,
-    delayMillis: Int = 500,
+    durationMillis: Int = 600,
     content: @Composable BoxScope. () -> Unit = {}
 ) {
     val rotationYAnim = remember {
@@ -41,8 +39,8 @@ fun RotatingPlaneAnim(
             targetValue = 180f,
             animationSpec = infiniteRepeatable(
                 tween(
-                    durationMillis = delayMillis,
-                    delayMillis = delayMillis,
+                    durationMillis = durationMillis,
+                    delayMillis = durationMillis,
                     easing = LinearEasing
                 ),
                 RepeatMode.Restart
@@ -50,13 +48,13 @@ fun RotatingPlaneAnim(
         )
     }
     LaunchedEffect(key1 = Unit){
-        delay(delayMillis.toLong())
+        delay(durationMillis.toLong())
         rotationXAnim.animateTo(
             targetValue = 180f,
             animationSpec = infiniteRepeatable(
                 tween(
-                    durationMillis = delayMillis,
-                    delayMillis = delayMillis,
+                    durationMillis = durationMillis,
+                    delayMillis = durationMillis,
                     easing = LinearEasing
                 ),
                 RepeatMode.Restart
@@ -64,7 +62,7 @@ fun RotatingPlaneAnim(
         )
     }
     Box(
-        modifier = modifier.size(60.dp),
+        modifier = modifier,
         contentAlignment = Alignment.Center
     ){
         Surface(

@@ -108,7 +108,7 @@ fun WaveAnim(
         )
     }
     Row(
-        modifier = modifier.size(60.dp),
+        modifier = modifier,
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center
     ) {

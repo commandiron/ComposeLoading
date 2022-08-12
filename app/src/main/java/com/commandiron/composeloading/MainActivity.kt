@@ -3,14 +3,19 @@ package com.commandiron.composeloading
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Text
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.commandiron.compose_loading.*
 import com.commandiron.composeloading.ui.theme.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,37 +29,51 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Row {
                         RotatingPlaneAnim(
-                            modifier = Modifier.background(BurntOrange),
+                            modifier = Modifier
+                                .size(60.dp)
+                                .background(BurntOrange),
                             color = Color.White
                         )
                         CircleDotAnim(
-                            modifier = Modifier.background(Charcoal),
+                            modifier = Modifier
+                                .size(60.dp)
+                                .background(Charcoal),
                             color = Color.White,
                         )
                         DoubleBounceAnim(
-                            modifier = Modifier.background(MountainMeadow),
+                            modifier = Modifier
+                                .size(60.dp)
+                                .background(MountainMeadow),
                             color = Color.White
                         )
                         WaveAnim(
-                            modifier = Modifier.background(StarCommandBlue),
+                            modifier = Modifier
+                                .size(60.dp)
+                                .background(StarCommandBlue),
                             color = Color.White
                         )
                     }
                     Row {
                         WanderingCubesAnim(
-                            modifier = Modifier.background(BattleshipGrey),
-                        )
-                        WaveAnim(
-                            modifier = Modifier.background(StarCommandBlue),
+                            modifier = Modifier
+                                .size(60.dp)
+                                .background(BattleshipGrey),
                             color = Color.White
                         )
-                        CircleDotAnim(
-                            modifier = Modifier.background(Charcoal),
-                            color = Color.White,
+                        Pulse(
+                            modifier = Modifier
+                                .size(60.dp)
+                                .background(MaximumYellowRed)
                         )
-                        DoubleBounceAnim(
-                            modifier = Modifier.background(MountainMeadow),
-                            color = Color.White
+                        ChasingDots(
+                            modifier = Modifier
+                                .size(60.dp)
+                                .background(BurntOrange)
+                        )
+                        ThreeBounce(
+                            modifier = Modifier
+                                .size(60.dp)
+                                .background(GOGreen)
                         )
                     }
                     Spacer(modifier = Modifier.height(16.dp))
