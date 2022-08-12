@@ -49,6 +49,7 @@ fun CircleDotAnim(
         durationMillis = durationMillis,
         offsetMillis = delayBetweenDotsMillis * 5
     )
+
     val circleRadiusMultiplier3 = transition.radiusMultiplierTransition(
         initialValue = 0.512f,
         targetValue = 0.35f,
@@ -80,7 +81,6 @@ fun CircleDotAnim(
 
             val radius = (this.size.height / 2)
             val radiusCommon = this.size.height / 5 * circleRatio
-
 
             val angle1 = (circleAnimation1.value * 360.0)
             val offsetX1 = -(radius * sin(Math.toRadians(angle1))).toFloat() + (this.size.width / 2)
