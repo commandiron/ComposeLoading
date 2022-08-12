@@ -4,8 +4,9 @@ import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -25,48 +26,48 @@ fun CircleDotAnim(
 ) {
     val transition = rememberInfiniteTransition()
 
-    val circleAnimation1 by transition.circleDotPathTransition(
+    val circleAnimation1 = transition.circleDotPathTransition(
         durationMillis = durationMillis
     )
-    val circleAnimation2 by transition.circleDotPathTransition(
+    val circleAnimation2 = transition.circleDotPathTransition(
         durationMillis = durationMillis,
         offsetMillis = delayBetweenDotsMillis
     )
-    val circleAnimation3 by transition.circleDotPathTransition(
+    val circleAnimation3 = transition.circleDotPathTransition(
         durationMillis = durationMillis,
         offsetMillis = delayBetweenDotsMillis * 2
     )
-    val circleAnimation4 by transition.circleDotPathTransition(
+    val circleAnimation4 = transition.circleDotPathTransition(
         durationMillis = durationMillis,
         offsetMillis = delayBetweenDotsMillis * 3
     )
-    val circleAnimation5 by transition.circleDotPathTransition(
+    val circleAnimation5 = transition.circleDotPathTransition(
         durationMillis = durationMillis,
         offsetMillis = delayBetweenDotsMillis * 4
     )
-    val circleAnimation6 by transition.circleDotPathTransition(
+    val circleAnimation6 = transition.circleDotPathTransition(
         durationMillis = durationMillis,
         offsetMillis = delayBetweenDotsMillis * 5
     )
-    val circleRadiusMultiplier3 by transition.radiusMultiplierTransition(
+    val circleRadiusMultiplier3 = transition.radiusMultiplierTransition(
         initialValue = 0.512f,
         targetValue = 0.35f,
         durationMillis = durationMillis / 2,
         offsetMillis = delayBetweenDotsMillis * 3
     )
-    val circleRadiusMultiplier4 by transition.radiusMultiplierTransition(
+    val circleRadiusMultiplier4 = transition.radiusMultiplierTransition(
         initialValue = 0.64f,
         targetValue = 0.35f,
         durationMillis = durationMillis / 2,
         offsetMillis = delayBetweenDotsMillis * 2
     )
-    val circleRadiusMultiplier5 by transition.radiusMultiplierTransition(
+    val circleRadiusMultiplier5 = transition.radiusMultiplierTransition(
         initialValue = 0.8f,
         targetValue = 0.35f,
         durationMillis = durationMillis / 2,
         offsetMillis = delayBetweenDotsMillis
     )
-    val circleRadiusMultiplier6 by transition.radiusMultiplierTransition(
+    val circleRadiusMultiplier6 = transition.radiusMultiplierTransition(
         initialValue = 1f,
         targetValue = 0.35f,
         durationMillis = durationMillis / 2,
@@ -81,7 +82,7 @@ fun CircleDotAnim(
             val radiusCommon = this.size.height / 5 * circleRatio
 
 
-            val angle1 = (circleAnimation1 * 360.0)
+            val angle1 = (circleAnimation1.value * 360.0)
             val offsetX1 = -(radius * sin(Math.toRadians(angle1))).toFloat() + (this.size.width / 2)
             val offsetY1 = (radius * cos(Math.toRadians(angle1))).toFloat() + (this.size.height / 2)
             drawCircle(
@@ -90,7 +91,7 @@ fun CircleDotAnim(
                 center = Offset(offsetX1,  offsetY1)
             )
 
-            val angle2 = (circleAnimation2 * 360.0)
+            val angle2 = (circleAnimation2.value * 360.0)
             val offsetX2 = -(radius * sin(Math.toRadians(angle2))).toFloat() + (this.size.width / 2)
             val offsetY2 = (radius * cos(Math.toRadians(angle2))).toFloat() + (this.size.height / 2)
             drawCircle(
@@ -99,8 +100,8 @@ fun CircleDotAnim(
                 center = Offset(offsetX2,  offsetY2)
             )
 
-            val radius3 = circleRadiusMultiplier3 * this.size.height / 5
-            val angle3 = (circleAnimation3 * 360.0)
+            val radius3 = circleRadiusMultiplier3.value * this.size.height / 5
+            val angle3 = (circleAnimation3.value * 360.0)
             val offsetX3 = -(radius * sin(Math.toRadians(angle3))).toFloat() + (this.size.width / 2)
             val offsetY3 = (radius * cos(Math.toRadians(angle3))).toFloat() + (this.size.height / 2)
             drawCircle(
@@ -109,8 +110,8 @@ fun CircleDotAnim(
                 center = Offset(offsetX3,  offsetY3)
             )
 
-            val radius4 = circleRadiusMultiplier4 * this.size.height / 5
-            val angle4 = (circleAnimation4* 360.0)
+            val radius4 = circleRadiusMultiplier4.value * this.size.height / 5
+            val angle4 = (circleAnimation4.value * 360.0)
             val offsetX4 = -(radius * sin(Math.toRadians(angle4))).toFloat() + (this.size.width / 2)
             val offsetY4 = (radius * cos(Math.toRadians(angle4))).toFloat() + (this.size.height / 2)
             drawCircle(
@@ -119,8 +120,8 @@ fun CircleDotAnim(
                 center = Offset(offsetX4,  offsetY4)
             )
 
-            val radius5 = circleRadiusMultiplier5 * this.size.height / 5
-            val angle5 = (circleAnimation5 * 360.0)
+            val radius5 = circleRadiusMultiplier5.value * this.size.height / 5
+            val angle5 = (circleAnimation5.value * 360.0)
             val offsetX5 = -(radius * sin(Math.toRadians(angle5))).toFloat() + (this.size.width / 2)
             val offsetY5 = (radius * cos(Math.toRadians(angle5))).toFloat() + (this.size.height / 2)
             drawCircle(
@@ -129,8 +130,8 @@ fun CircleDotAnim(
                 center = Offset(offsetX5,  offsetY5)
             )
 
-            val radius6 = circleRadiusMultiplier6 * this.size.height / 5
-            val angle6 = (circleAnimation6 * 360.0)
+            val radius6 = circleRadiusMultiplier6.value * this.size.height / 5
+            val angle6 = (circleAnimation6.value * 360.0)
             val offsetX6 = -(radius * sin(Math.toRadians(angle6))).toFloat() + (this.size.width / 2)
             val offsetY6 = (radius * cos(Math.toRadians(angle6))).toFloat() + (this.size.height / 2)
             drawCircle(

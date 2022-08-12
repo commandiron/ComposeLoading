@@ -11,7 +11,10 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
@@ -33,18 +36,18 @@ fun LoadingBar(
     val loadingBarProgress = remember {
         Animatable(0f)
     }
-    var canvasWidth by remember { mutableStateOf(0f)}
+    val canvasWidth = remember { mutableStateOf(0f)}
     LaunchedEffect(key1 = Unit){
         if(fakeDurationMillis != 0){
             loadingBarProgress.animateTo(
-                targetValue = canvasWidth,
+                targetValue = canvasWidth.value,
                 animationSpec = tween(
                     durationMillis = fakeDurationMillis,
                     easing = LinearEasing
                 )
             )
         }else{
-            val progressCalc = progress * canvasWidth
+            val progressCalc = progress * canvasWidth.value
             loadingBarProgress.animateTo(
                 targetValue = progressCalc,
                 animationSpec = tween(
@@ -65,7 +68,7 @@ fun LoadingBar(
         Canvas(
             modifier = Modifier.fillMaxSize(),
             onDraw = {
-                canvasWidth = size.width
+                canvasWidth.value = size.width
                 val canvasHeight = size.height
                 drawRect(
                     color = fillColor,
