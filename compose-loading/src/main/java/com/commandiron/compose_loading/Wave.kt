@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 
 @Composable
-fun WaveAnim(
+fun Wave(
     modifier: Modifier = Modifier,
     size: Dp = 4.dp,
     color: Color = MaterialTheme.colorScheme.surface,

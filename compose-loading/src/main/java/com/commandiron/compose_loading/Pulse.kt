@@ -26,12 +26,12 @@ fun Pulse(
 ) {
     val transition = rememberInfiniteTransition()
 
-    val sizeMultiplier by transition.fractionTransition(
+    val sizeMultiplier by transition.fraction2Transition(
         initialValue = 0f,
         targetValue = 1f,
         durationMillis = durationMillis
     )
-    val alphaMultiplier by transition.fractionTransition(
+    val alphaMultiplier by transition.fraction2Transition(
         initialValue = 1f,
         targetValue = 0f,
         durationMillis = durationMillis
@@ -50,10 +50,11 @@ fun Pulse(
 }
 
 @Composable
-internal fun InfiniteTransition.fractionTransition(
+internal fun InfiniteTransition.fraction2Transition(
     initialValue: Float,
     targetValue: Float,
     durationMillis: Int,
+    offsetMillis: Int = 0,
     easing: Easing = FastOutSlowInEasing
 ): State<Float> {
     return animateFloat(
@@ -64,7 +65,33 @@ internal fun InfiniteTransition.fractionTransition(
                 this.durationMillis = durationMillis
                 initialValue at 0 with easing
                 targetValue at durationMillis with easing
-            }
+            },
+            RepeatMode.Restart,
+            StartOffset(offsetMillis)
+        )
+    )
+}
+
+@Composable
+internal fun InfiniteTransition.fraction3Transition(
+    initialValue: Float,
+    targetValue: Float,
+    durationMillis: Int,
+    offsetMillis: Int = 0,
+    easing: Easing = FastOutSlowInEasing
+): State<Float> {
+    return animateFloat(
+        initialValue = initialValue,
+        targetValue = targetValue,
+        animationSpec = infiniteRepeatable(
+            animation = keyframes {
+                this.durationMillis = durationMillis
+                initialValue at 0 with easing
+                targetValue at durationMillis / 2 with easing
+                initialValue at durationMillis with easing
+            },
+            RepeatMode.Restart,
+            StartOffset(offsetMillis)
         )
     )
 }

@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 
 @Composable
-fun DoubleBounceAnim(
+fun DoubleBounce(
     modifier: Modifier = Modifier,
     maxSize: Dp = 32.dp,
     color: Color = MaterialTheme.colorScheme.surface,

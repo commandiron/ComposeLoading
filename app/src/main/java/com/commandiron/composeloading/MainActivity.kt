@@ -3,19 +3,14 @@ package com.commandiron.composeloading
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Text
-import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.commandiron.compose_loading.*
 import com.commandiron.composeloading.ui.theme.*
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,25 +23,25 @@ class MainActivity : ComponentActivity() {
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Row {
-                        RotatingPlaneAnim(
+                        RotatingPlane(
                             modifier = Modifier
                                 .size(60.dp)
                                 .background(BurntOrange),
                             color = Color.White
                         )
-                        CircleDotAnim(
+                        ChasingDots(
                             modifier = Modifier
                                 .size(60.dp)
                                 .background(Charcoal),
                             color = Color.White,
                         )
-                        DoubleBounceAnim(
+                        DoubleBounce(
                             modifier = Modifier
                                 .size(60.dp)
                                 .background(MountainMeadow),
                             color = Color.White
                         )
-                        WaveAnim(
+                        Wave(
                             modifier = Modifier
                                 .size(60.dp)
                                 .background(StarCommandBlue),
@@ -54,7 +49,7 @@ class MainActivity : ComponentActivity() {
                         )
                     }
                     Row {
-                        WanderingCubesAnim(
+                        WanderingCubes(
                             modifier = Modifier
                                 .size(60.dp)
                                 .background(BattleshipGrey),
@@ -66,7 +61,7 @@ class MainActivity : ComponentActivity() {
                                 .background(MaximumYellowRed),
                             color = Color.White
                         )
-                        ChasingDots(
+                        ChasingTwoDots(
                             modifier = Modifier
                                 .size(60.dp)
                                 .background(BurntOrange),
@@ -75,7 +70,30 @@ class MainActivity : ComponentActivity() {
                         ThreeBounce(
                             modifier = Modifier
                                 .size(60.dp)
-                                .background(GOGreen)
+                                .background(GOGreen),
+                            color = Color.White
+                        )
+                    }
+                    Row {
+                        Circle(
+                            modifier = Modifier
+                                .size(60.dp)
+                                .background(BurntOrange)
+                        )
+                        CubeGrid(
+                            modifier = Modifier
+                                .size(60.dp)
+                                .background(Charcoal)
+                        )
+                        FadingCircle(
+                            modifier = Modifier
+                                .size(60.dp)
+                                .background(MountainMeadow)
+                        )
+                        FoldingCube(
+                            modifier = Modifier
+                                .size(60.dp)
+                                .background(StarCommandBlue)
                         )
                     }
                     Spacer(modifier = Modifier.height(16.dp))

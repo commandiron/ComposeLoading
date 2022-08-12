@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun WanderingCubesAnim(
+fun WanderingCubes(
     modifier: Modifier = Modifier,
     size: DpSize = DpSize(36.dp, 36.dp),
     color: Color = MaterialTheme.colorScheme.surface,

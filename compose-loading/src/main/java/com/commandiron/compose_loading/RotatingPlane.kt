@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 
 @Composable
-fun RotatingPlaneAnim(
+fun RotatingPlane(
     modifier: Modifier = Modifier,
     size: DpSize = DpSize(32.dp, 32.dp),
     color: Color = MaterialTheme.colorScheme.surface,
