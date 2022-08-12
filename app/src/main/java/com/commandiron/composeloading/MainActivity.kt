@@ -63,12 +63,14 @@ class MainActivity : ComponentActivity() {
                         Pulse(
                             modifier = Modifier
                                 .size(60.dp)
-                                .background(MaximumYellowRed)
+                                .background(MaximumYellowRed),
+                            color = Color.White
                         )
                         ChasingDots(
                             modifier = Modifier
                                 .size(60.dp)
-                                .background(BurntOrange)
+                                .background(BurntOrange),
+                            color = Color.White
                         )
                         ThreeBounce(
                             modifier = Modifier

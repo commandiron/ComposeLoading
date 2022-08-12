@@ -67,13 +67,6 @@ fun WanderingCubesAnim(
         durationMillisPerFraction = durationMillisPerFraction
     )
 
-    //Rotation doesn't work.
-    val rectRotation by transition.rotationTransition(
-        initialValue = 0f,
-        targetValue = 90f,
-        durationMillisPerFraction = durationMillisPerFraction
-    )
-
     Box(
         modifier = modifier,
         contentAlignment = Alignment.Center
@@ -139,6 +132,7 @@ internal fun InfiniteTransition.sizeMultiplierTransition(
     initialValue: Float,
     targetValue: Float,
     durationMillisPerFraction: Int,
+    offsetMillis: Int = 0,
     easing: Easing = FastOutSlowInEasing
 ): State<Float> {
     return animateFloat(
@@ -153,31 +147,8 @@ internal fun InfiniteTransition.sizeMultiplierTransition(
                 targetValue at durationMillisPerFraction * 3 with easing
                 initialValue at durationMillisPerFraction * 4 with easing
             },
-            RepeatMode.Restart
-        )
-    )
-}
-
-@Composable
-internal fun InfiniteTransition.rotationTransition(
-    initialValue: Float,
-    targetValue: Float,
-    durationMillisPerFraction: Int,
-    easing: Easing = FastOutSlowInEasing
-): State<Float> {
-    return animateFloat(
-        initialValue = initialValue,
-        targetValue = targetValue,
-        animationSpec = infiniteRepeatable(
-            animation = keyframes {
-                this.durationMillis = durationMillisPerFraction * 4
-                initialValue at 0 with easing
-                targetValue at durationMillisPerFraction with easing
-                initialValue at durationMillisPerFraction * 2 with easing
-                targetValue at durationMillisPerFraction * 3 with easing
-                initialValue at durationMillisPerFraction * 4 with easing
-            },
-            RepeatMode.Restart
+            RepeatMode.Restart,
+            StartOffset(offsetMillis)
         )
     )
 }
