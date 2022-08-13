@@ -33,6 +33,7 @@ BubbleNavigationBar{
     }
 }
 ```
+    
 </td> 
 <td></td> 
 <td></td>
