@@ -18,20 +18,23 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 </tr>
 <tr>
 <td>
-    
+ 
 ```kotlin  
+    
 RotatingPlane()
-```
+``` 
 </td> 
 <td>
     
 ```kotlin  
+    
 LoadingBar(fakeDurationMillis = 10000)
 ``` 
 </td> 
 <td>
     
 ```kotlin  
+    
 LoadingDots("Loading")
 ```
 </td>
