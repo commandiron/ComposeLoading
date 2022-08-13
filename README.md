@@ -6,7 +6,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 
 <table>
 <tr>
-<td> SpinKit </td> <td> Loading Bar </td> <td> Loading Dots </td>
+<td>SpinKit</td><td>Loading Bar</td><td>Loading Dots</td>
 </tr>
 <tr>
 <td><img src="https://user-images.githubusercontent.com/50905347/184496766-64c89c81-bbe8-4ad9-8e5b-db9fc9f4c782.gif" width="231" height="173"></td> 
@@ -38,6 +38,9 @@ LoadingDots("Loading")
 ```
    
 </td>
+</tr>
+<tr>
+<td>Features</td><td>Features</td><td>Features</td>
 </tr>
 </table>
 
