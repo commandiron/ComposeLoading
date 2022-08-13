@@ -29,7 +29,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 <td>
  
 ```kotlin  
-    
+//e.g.
 RotatingPlane()
 ``` 
 </td> 
