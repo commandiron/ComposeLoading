@@ -10,3 +10,4 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 
 |Others|
 |------|
+|<img src="https://user-images.githubusercontent.com/50905347/184497482-fe3141f7-ea3a-433c-be67-0ec8196579f9.gif" width="231" height="173">|
