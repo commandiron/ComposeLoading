@@ -42,4 +42,27 @@ LoadingDots("Loading")
 <tr>
 <td>Features</td><td>Features</td><td>Features</td>
 </tr>
+ <tr>
+<td>
+ 
+```kotlin  
+    
+RotatingPlane()
+``` 
+</td> 
+<td>
+    
+```kotlin  
+    
+LoadingBar(fakeDurationMillis = 10000)
+``` 
+</td> 
+<td>
+    
+```kotlin  
+    
+LoadingDots("Loading")
+```
+</td>
+</tr>
 </table>
