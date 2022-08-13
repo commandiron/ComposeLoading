@@ -37,7 +37,7 @@ RotatingPlane()
     
 ```kotlin  
     
-LoadingBar(fakeDurationMillis = 10000)
+LoadingBar()
 ``` 
 </td> 
 <td>
