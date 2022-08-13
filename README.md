@@ -1,6 +1,6 @@
 # ComposeLoading
 
-Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spinkit/) with additional loading.
+Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spinkit/) with additional animations.
 
 ## How it looks
 
