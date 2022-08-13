@@ -20,7 +20,7 @@ import kotlin.math.sin
 @Composable
 fun ChasingTwoDots(
     modifier: Modifier = Modifier,
-    size: DpSize = DpSize(24.dp, 24.dp),
+    size: DpSize = DpSize(20.dp, 20.dp),
     color: Color = MaterialTheme.colorScheme.surface,
     durationMillis: Int = 1800
 ) {

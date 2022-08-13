@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun WanderingCubes(
     modifier: Modifier = Modifier,
-    size: DpSize = DpSize(36.dp, 36.dp),
+    cubeSize: DpSize = DpSize(30.dp, 30.dp),
     color: Color = MaterialTheme.colorScheme.surface,
     durationMillisPerFraction: Int = 600
 ) {
@@ -71,7 +71,7 @@ fun WanderingCubes(
         modifier = modifier,
         contentAlignment = Alignment.Center
     ){
-        Canvas(modifier = Modifier.size(size)){
+        Canvas(modifier = Modifier.size(cubeSize)){
             val height = this.size.height
             val width = this.size.width
 

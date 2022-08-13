@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun ThreeBounce(
     modifier: Modifier = Modifier,
-    size: Dp = 10.dp,
+    size: Dp = 30.dp,
     color: Color = MaterialTheme.colorScheme.surface,
     shape: Shape = CircleShape,
     durationMillis: Int = 1400,
@@ -48,25 +48,25 @@ fun ThreeBounce(
         contentAlignment = Alignment.Center
     ){
         Row() {
-            Box(modifier = Modifier.size(size), contentAlignment = Alignment.Center) {
+            Box(modifier = Modifier.size(size / 3), contentAlignment = Alignment.Center) {
                 Surface(
-                    modifier = Modifier.size(size * sizeMultiplier1),
+                    modifier = Modifier.size(size / 3 * sizeMultiplier1),
                     shape = shape,
                     color = color
                 ) {}
             }
-            Spacer(modifier = Modifier.width(size / 4))
-            Box(modifier = Modifier.size(size), contentAlignment = Alignment.Center) {
+            Spacer(modifier = Modifier.width(size / 3 / 4))
+            Box(modifier = Modifier.size(size / 3), contentAlignment = Alignment.Center) {
                 Surface(
-                    modifier = Modifier.size(size * sizeMultiplier2),
+                    modifier = Modifier.size(size / 3 * sizeMultiplier2),
                     shape = shape,
                     color = color
                 ) {}
             }
-            Spacer(modifier = Modifier.width(size / 4))
-            Box(modifier = Modifier.size(size), contentAlignment = Alignment.Center) {
+            Spacer(modifier = Modifier.width(size / 3 / 4))
+            Box(modifier = Modifier.size(size / 3), contentAlignment = Alignment.Center) {
                 Surface(
-                    modifier = Modifier.size(size * sizeMultiplier3),
+                    modifier = Modifier.size(size / 3 * sizeMultiplier3),
                     shape = shape,
                     color = color
                 ) {}

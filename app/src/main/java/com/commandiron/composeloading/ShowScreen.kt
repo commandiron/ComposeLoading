@@ -58,11 +58,11 @@ fun ShowScreen() {
 
                 11 -> { FadingCircle(Modifier.background(MountainMeadow).fillMaxSize()) }
 
-                12 -> { FoldingCube( Modifier.background(StarCommandBlue).fillMaxSize()) }
+                12 -> { FoldingCube(Modifier.background(StarCommandBlue).fillMaxSize()) }
 
-                13 -> { LoadingBar(fillColor = Bluetiful) }
+                13 -> { LoadingBar(fakeMillis = 10000) }
 
-                14 -> { LoadingDotText("Loading") }
+                14 -> { LoadingDots("Loading") }
             }
         }
     }

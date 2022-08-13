@@ -19,9 +19,9 @@ import kotlinx.coroutines.delay
 @Composable
 fun Wave(
     modifier: Modifier = Modifier,
-    size: Dp = 4.dp,
+    size: Dp = 20.dp,
     color: Color = MaterialTheme.colorScheme.surface,
-    delayMillis: Int = 250,
+    delayMillis: Int = 240,
 ) {
     val aspectRatioAnim1 = remember {
         Animatable(0.25f)
@@ -114,35 +114,35 @@ fun Wave(
     ) {
         Surface(
             modifier = Modifier
-                .size(size)
+                .size(size / 5)
                 .aspectRatio(aspectRatioAnim1.value),
             color = color
         ) {}
-        Spacer(modifier = Modifier.width(size / 3))
+        Spacer(modifier = Modifier.width(size / 15))
         Surface(
             modifier = Modifier
-                .size(size)
+                .size(size / 5)
                 .aspectRatio(aspectRatioAnim2.value),
             color = color
         ) {}
-        Spacer(modifier = Modifier.width(size / 3))
+        Spacer(modifier = Modifier.width(size / 15))
         Surface(
             modifier = Modifier
-                .size(size)
+                .size(size / 5)
                 .aspectRatio(aspectRatioAnim3.value),
             color = color
         ) {}
-        Spacer(modifier = Modifier.width(size / 3))
+        Spacer(modifier = Modifier.width(size / 15))
         Surface(
             modifier = Modifier
-                .size(size)
+                .size(size / 5)
                 .aspectRatio(aspectRatioAnim4.value),
             color = color
         ) {}
-        Spacer(modifier = Modifier.width(size / 3))
+        Spacer(modifier = Modifier.width(size / 15))
         Surface(
             modifier = Modifier
-                .size(size)
+                .size(size / 5)
                 .aspectRatio(aspectRatioAnim5.value),
             color = color
         ) {}

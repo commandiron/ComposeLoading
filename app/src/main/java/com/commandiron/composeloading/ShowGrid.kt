@@ -84,9 +84,5 @@ fun ShowGrid(
                     .background(StarCommandBlue)
             )
         }
-        Spacer(modifier = Modifier.height(16.dp))
-        LoadingBar(fillColor = Bluetiful)
-        Spacer(modifier = Modifier.height(8.dp))
-        LoadingDotText("Loading")
     }
 }

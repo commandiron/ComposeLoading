@@ -15,23 +15,24 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.commandiron.compose_loading.transition.fractionTransition
 
 @Composable
 fun Pulse(
     modifier: Modifier = Modifier,
-    maxSize: Dp = 32.dp,
+    maxSize: Dp = 30.dp,
     color: Color = MaterialTheme.colorScheme.surface,
     shape: Shape = CircleShape,
     durationMillis: Int = 1000
 ) {
     val transition = rememberInfiniteTransition()
 
-    val sizeMultiplier by transition.fraction2Transition(
+    val sizeMultiplier by transition.fractionTransition(
         initialValue = 0f,
         targetValue = 1f,
         durationMillis = durationMillis
     )
-    val alphaMultiplier by transition.fraction2Transition(
+    val alphaMultiplier by transition.fractionTransition(
         initialValue = 1f,
         targetValue = 0f,
         durationMillis = durationMillis
@@ -47,29 +48,6 @@ fun Pulse(
             color = color.copy(alpha = alphaMultiplier)
         ) {}
     }
-}
-
-@Composable
-internal fun InfiniteTransition.fraction2Transition(
-    initialValue: Float,
-    targetValue: Float,
-    durationMillis: Int,
-    offsetMillis: Int = 0,
-    easing: Easing = FastOutSlowInEasing
-): State<Float> {
-    return animateFloat(
-        initialValue = initialValue,
-        targetValue = targetValue,
-        animationSpec = infiniteRepeatable(
-            animation = keyframes {
-                this.durationMillis = durationMillis
-                initialValue at 0 with easing
-                targetValue at durationMillis with easing
-            },
-            RepeatMode.Restart,
-            StartOffset(offsetMillis)
-        )
-    )
 }
 
 @Composable

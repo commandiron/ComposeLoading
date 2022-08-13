@@ -14,7 +14,7 @@ import androidx.compose.ui.text.TextStyle
 import kotlinx.coroutines.delay
 
 @Composable
-fun LoadingDotText(
+fun LoadingDots(
     text: String? = null,
     style: TextStyle = LocalTextStyle.current,
     color: Color = LocalContentColor.current,
