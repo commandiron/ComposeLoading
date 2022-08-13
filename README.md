@@ -5,13 +5,26 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 ## How it looks
 
 <table>
-<tr><td>SpinKit</td><td>Loading Bar</td><td>Loading Dots</td></tr>
+<tr><td><div align="center">SpinKit</div></td><td><div align="center">Loading Bar</div></td><td><div align="center">Loading Dots</div></td></tr>
+
 <tr>
-<td><img src="https://user-images.githubusercontent.com/50905347/184496766-64c89c81-bbe8-4ad9-8e5b-db9fc9f4c782.gif" width="231" height="173"></td> 
-<td><img src="https://user-images.githubusercontent.com/50905347/184497482-fe3141f7-ea3a-433c-be67-0ec8196579f9.gif" width="231" height="173"></td> 
-<td><img src="https://user-images.githubusercontent.com/50905347/184497705-9236994c-8985-482a-81c0-5604dd0f69ca.gif" width="231" height="173"></td>
+<td>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/50905347/184496766-64c89c81-bbe8-4ad9-8e5b-db9fc9f4c782.gif" width="231" height="173">
+</div>
+</td> 
+<td>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/50905347/184497482-fe3141f7-ea3a-433c-be67-0ec8196579f9.gif" width="231" height="173">
+</div>
+</td> 
+<td>
+<div align="center">
+<img src="https://user-images.githubusercontent.com/50905347/184497705-9236994c-8985-482a-81c0-5604dd0f69ca.gif" width="231" height="173">
+</div>
+</td>
 </tr>
-<tr><td>Usage</td><td>Usage</td><td>Usage</td></tr>
+<tr><td><div align="center">Usage</div></td><td><div align="center">Usage</div></td><td><div align="center">Usage</div></td></tr>
 <tr>
 <td>
  
@@ -35,7 +48,7 @@ LoadingDots("Loading")
 ```
 </td>
 </tr>
-<tr><td>Features</td><td>Features</td><td>Features</td></tr>
+<tr><td><div align="center">Features</div></td><td><div align="center">Features</div></td><td><div align="center">Features</div></td></tr>
 <tr>
 <td>
  
