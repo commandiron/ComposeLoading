@@ -10,4 +10,5 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 |Usage|Usage|Usage|
 |e.g. ```RotatingPlane()```|```LoadingBar()```|```LoadingDotWithText("Loading")```|
 |Features|Features|Features|
-||```LoadingBar(progress = 0.5f,fakeDurationMillis = 0,thickness = 16.dp,width = 200.dp,backgroundColor = Color.White,fillColor = Bluetiful,borderColor = Color.Black)```||
+||```LoadingBar(
+  progress = 0.5f,fakeDurationMillis = 0,thickness = 16.dp,width = 200.dp,backgroundColor = Color.White,fillColor = Bluetiful,borderColor = Color.Black)```||
