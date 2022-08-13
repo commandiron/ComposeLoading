@@ -18,6 +18,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 </tr>
 <tr>
 <td>
+    
 ```kotlin  
 BubbleNavigationBar{
     navigationItems.forEach { navigationItem ->
