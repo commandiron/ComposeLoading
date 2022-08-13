@@ -9,7 +9,9 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 <td> SpinKit </td> <td> Loading Bar </td> <td> Loading Dots </td>
 </tr>
 <tr>
-<td> 200 </td> <td> 200 </td> <td> 200 </td>
+<td> <img src="https://user-images.githubusercontent.com/50905347/184496766-64c89c81-bbe8-4ad9-8e5b-db9fc9f4c782.gif" width="231" height="173"> </td> 
+<td> 200 </td> 
+<td> 200 </td>
 </tr>
 </table>
 
