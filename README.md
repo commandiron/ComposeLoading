@@ -20,24 +20,24 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 <td>
     
 ```kotlin  
-BubbleNavigationBar{
-    navigationItems.forEach { navigationItem ->
-        BubbleNavigationBarItem(
-            selected = currentRoute == navigationItem.route,
-            onClick = {
-                //Navigate
-            },
-            icon = navigationItem.icon,
-            title = navigationItem.title,
-            selectedColor = navigationItem.selectedColor
-        )
-    }
-}
+RotatingPlane()
 ```
     
 </td> 
-<td></td> 
-<td></td>
+<td>
+    
+```kotlin  
+LoadingBar(fakeDurationMillis = 10000)
+```
+    
+</td> 
+<td>
+    
+```kotlin  
+LoadingDots("Loading")
+```
+   
+</td>
 </tr>
 </table>
 
