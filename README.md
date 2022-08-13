@@ -14,7 +14,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 <td><img src="https://user-images.githubusercontent.com/50905347/184497705-9236994c-8985-482a-81c0-5604dd0f69ca.gif" width="231" height="173"></td>
 </tr>
 <tr>
-<td> SpinKit </td> <td> Loading Bar </td> <td> Loading Dots </td>
+<td>Usage</td><td>Usage</td><td>Usage</td>
 </tr>
 </table>
 
