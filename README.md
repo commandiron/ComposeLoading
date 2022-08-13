@@ -61,7 +61,17 @@ RotatingPlane()
     
 ```kotlin  
     
-LoadingBar(fakeDurationMillis = 10000)
+@Composable
+fun LoadingBar(
+    modifier: Modifier = Modifier,
+    @FloatRange(from = 0.0, to = 1.0) progress: Float = 0.0f,
+    fakeDurationMillis: Int = 0,
+    thickness: Dp = 16.dp,
+    width: Dp = 200.dp,
+    backgroundColor: Color = MaterialTheme.colorScheme.background,
+    fillColor: Color = MaterialTheme.colorScheme.primary,
+    borderColor: Color = Color.Black
+) {}
 ``` 
 </td> 
 <td>
