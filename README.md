@@ -16,6 +16,27 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 <tr>
 <td>Usage</td><td>Usage</td><td>Usage</td>
 </tr>
+<tr>
+<td>
+```kotlin  
+BubbleNavigationBar{
+    navigationItems.forEach { navigationItem ->
+        BubbleNavigationBarItem(
+            selected = currentRoute == navigationItem.route,
+            onClick = {
+                //Navigate
+            },
+            icon = navigationItem.icon,
+            title = navigationItem.title,
+            selectedColor = navigationItem.selectedColor
+        )
+    }
+}
+```
+</td> 
+<td></td> 
+<td></td>
+</tr>
 </table>
 
 |SpinKit|Loading Bar|Loading Dots|
