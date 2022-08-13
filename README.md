@@ -10,7 +10,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 </tr>
 <tr>
 <td> 200 </td> <td> 200 </td> <td> 200 </td>
-<td>
+</tr>
 </table>
 
 |SpinKit|Loading Bar|Loading Dot|
