@@ -4,4 +4,4 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 
 ## How it looks
 
-<img src="https://user-images.githubusercontent.com/50905347/178169979-f8958c33-680d-4a36-bc2e-4123e63f031b.gif" width="412" height="200">
+<img src="https://user-images.githubusercontent.com/50905347/184496131-448549dd-e5d4-48bf-a165-ee3c7732ecd2.gif" width="230" height="173">
