@@ -48,4 +48,5 @@ LoadingDots("Loading")
 ```
 </td> 
 </tr>
+<tr><td><div align="center">Usage</div></td><td><div align="center">Usage</div></td><td><div align="center">Usage</div></td></tr>
 </table>
