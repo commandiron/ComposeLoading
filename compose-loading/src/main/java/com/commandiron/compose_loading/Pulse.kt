@@ -11,29 +11,32 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import com.commandiron.compose_loading.transition.fractionTransition
 
 @Composable
 fun Pulse(
     modifier: Modifier = Modifier,
-    maxSize: Dp = 30.dp,
+    durationMillis: Int = 1000,
+    delayMillis: Int = 0,
+    size: DpSize = DpSize(30.dp, 30.dp),
     color: Color = MaterialTheme.colorScheme.surface,
     shape: Shape = CircleShape,
-    durationMillis: Int = 1000
 ) {
     val transition = rememberInfiniteTransition()
 
     val sizeMultiplier = transition.fractionTransition(
         initialValue = 0f,
         targetValue = 1f,
-        durationMillis = durationMillis
+        durationMillis = durationMillis,
+        delayMillis = delayMillis
     )
     val alphaMultiplier = transition.fractionTransition(
         initialValue = 1f,
         targetValue = 0f,
-        durationMillis = durationMillis
+        durationMillis = durationMillis,
+        delayMillis = delayMillis
     )
 
     Box(
@@ -41,7 +44,7 @@ fun Pulse(
         contentAlignment = Alignment.Center
     ){
         Surface(
-            modifier = Modifier.size(maxSize * sizeMultiplier.value),
+            modifier = Modifier.size(size * sizeMultiplier.value),
             shape = shape,
             color = color.copy(alpha = alphaMultiplier.value)
         ) {}

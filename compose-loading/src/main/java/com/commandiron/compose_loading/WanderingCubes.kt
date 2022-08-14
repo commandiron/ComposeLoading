@@ -19,8 +19,8 @@ import com.commandiron.compose_loading.transition.EaseInOut
 @Composable
 fun WanderingCubes(
     modifier: Modifier = Modifier,
-    size: DpSize = DpSize(30.dp, 30.dp),
     durationMillis: Int = 1800,
+    size: DpSize = DpSize(30.dp, 30.dp),
     color: Color = MaterialTheme.colorScheme.surface,
 ) {
     val transition = rememberInfiniteTransition()
@@ -41,7 +41,7 @@ fun WanderingCubes(
     val x2Multiplier = transition.wanderingCubesTransition(
         initialValue = 0f,
         targetValue = 1f,
-        durationMillisPerFraction = durationPerFraction
+        durationMillisPerFraction = durationPerFraction,
     )
     val y2Multiplier = transition.wanderingCubesTransition(
         initialValue = 0f,
@@ -49,7 +49,6 @@ fun WanderingCubes(
         durationMillisPerFraction = durationPerFraction,
         offsetMillis = durationPerFraction
     )
-
     val rectHeightMultiplier = transition.wanderingCubesTransition(
         initialValue = 2f,
         targetValue = 1f,
@@ -71,7 +70,6 @@ fun WanderingCubes(
 
             val rectWidth = width / 6
             val rectHeight = height / 6
-            val defaultRectSize = Size(rectWidth, rectHeight)
 
             val rectSize = Size(
                 width = rectWidth * rectWidthMultiplier.value,

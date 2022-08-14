@@ -11,18 +11,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import com.commandiron.compose_loading.transition.fractionTransition
 
 @Composable
 fun ThreeBounce(
     modifier: Modifier = Modifier,
-    size: Dp = 30.dp,
+    size: DpSize = DpSize(30.dp, 30.dp),
     color: Color = MaterialTheme.colorScheme.surface,
     shape: Shape = CircleShape,
     durationMillis: Int = 1400,
-    delayBetweenDots: Int = 160
+    delayBetweenDotsMillis: Int = 160
 ) {
     val transition = rememberInfiniteTransition()
 
@@ -38,7 +38,7 @@ fun ThreeBounce(
         targetValue = 1f,
         fraction = 1,
         durationMillis = durationMillis / 2,
-        offsetMillis = delayBetweenDots,
+        offsetMillis = delayBetweenDotsMillis,
         repeatMode = RepeatMode.Reverse
     )
     val sizeMultiplier3 = transition.fractionTransition(
@@ -46,7 +46,7 @@ fun ThreeBounce(
         targetValue = 1f,
         fraction = 1,
         durationMillis = durationMillis / 2,
-        offsetMillis = delayBetweenDots * 2,
+        offsetMillis = delayBetweenDotsMillis * 2,
         repeatMode = RepeatMode.Reverse
     )
 
@@ -62,7 +62,7 @@ fun ThreeBounce(
                     color = color
                 ) {}
             }
-            Spacer(modifier = Modifier.width(size / 3 / 4))
+            Spacer(modifier = Modifier.width(size.width / 3 / 4))
             Box(modifier = Modifier.size(size / 3), contentAlignment = Alignment.Center) {
                 Surface(
                     modifier = Modifier.size(size / 3 * sizeMultiplier2.value),
@@ -70,7 +70,7 @@ fun ThreeBounce(
                     color = color
                 ) {}
             }
-            Spacer(modifier = Modifier.width(size / 3 / 4))
+            Spacer(modifier = Modifier.width(size.width / 3 / 4))
             Box(modifier = Modifier.size(size / 3), contentAlignment = Alignment.Center) {
                 Surface(
                     modifier = Modifier.size(size / 3 * sizeMultiplier3.value),

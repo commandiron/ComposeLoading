@@ -21,9 +21,9 @@ import com.commandiron.compose_loading.transition.fractionTransition
 @Composable
 fun RotatingPlane(
     modifier: Modifier = Modifier,
-    size: DpSize = DpSize(30.dp, 30.dp),
     durationMillis: Int = 1200,
     delayMillis: Int = 0,
+    size: DpSize = DpSize(30.dp, 30.dp),
     color: Color = MaterialTheme.colorScheme.surface,
     shape: Shape = Shapes.None,
     contentOnPlane: @Composable BoxScope. () -> Unit = {}

@@ -19,9 +19,9 @@ import com.commandiron.compose_loading.transition.fractionTransition
 @Composable
 fun DoubleBounce(
     modifier: Modifier = Modifier,
-    size: DpSize = DpSize(30.dp, 30.dp),
     durationMillis: Int = 2000,
     delayMillis: Int = 0,
+    size: DpSize = DpSize(30.dp, 30.dp),
     color: Color = MaterialTheme.colorScheme.surface,
     shape: Shape = CircleShape
 ) {

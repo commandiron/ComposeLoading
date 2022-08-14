@@ -2,7 +2,6 @@ package com.commandiron.compose_loading
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
@@ -14,35 +13,51 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
+import com.commandiron.compose_loading.transition.EaseInOut
+import com.commandiron.compose_loading.transition.fractionTransition
 import kotlin.math.cos
 import kotlin.math.sin
 
 @Composable
 fun ChasingTwoDots(
     modifier: Modifier = Modifier,
-    size: DpSize = DpSize(20.dp, 20.dp),
+    durationMillis: Int = 2000,
+    durationBetweenDotsMillis: Int = 400,
+    size: DpSize = DpSize(30.dp, 30.dp),
     color: Color = MaterialTheme.colorScheme.surface,
-    durationMillis: Int = 1800
 ) {
     val transition = rememberInfiniteTransition()
 
-    val dotPathMultiplier1 = transition.chasingDotPathMultiplierTransition(
-        durationMillis =  durationMillis
-    )
-    val dotPathMultiplier2 = transition.chasingDotPathMultiplierTransition2(
-        durationMillis =  durationMillis
-    )
-
-    val circleRadiusMultiplier1 = transition.chasingDotRadiusMultiplierTransition(
+    val dotPathMultiplier1 = transition.fractionTransition(
         initialValue = 0f,
         targetValue = 1f,
-        durationMillis = durationMillis / 2
+        fraction = 2,
+        durationMillis = durationMillis,
+        easing = LinearEasing
     )
-    val circleRadiusMultiplier2 = transition.chasingDotRadiusMultiplierTransition(
+    val dotPathMultiplier2 = transition.fractionTransition(
+        initialValue = 0f,
+        targetValue = 1f,
+        fraction = 2,
+        durationMillis = durationMillis,
+        offsetMillis = durationBetweenDotsMillis,
+        easing = LinearEasing
+    )
+
+    val circleRadiusMultiplier1 = transition.fractionTransition(
         initialValue = 0f,
         targetValue = 1f,
         durationMillis = durationMillis / 2,
-        offsetMillis = durationMillis / 2
+        repeatMode = RepeatMode.Reverse,
+        easing = EaseInOut
+    )
+    val circleRadiusMultiplier2 = transition.fractionTransition(
+        initialValue = 0f,
+        targetValue = 1f,
+        durationMillis = durationMillis / 2,
+        repeatMode = RepeatMode.Reverse,
+        offsetMillis = durationMillis / 2,
+        easing = EaseInOut
     )
 
     Box(
@@ -75,71 +90,4 @@ fun ChasingTwoDots(
             )
         }
     }
-}
-
-@Composable
-internal fun InfiniteTransition.chasingDotPathMultiplierTransition(
-    durationMillis: Int,
-    offsetMillis: Int = 0,
-    easing: Easing = LinearEasing
-): State<Float> {
-    return animateFloat(
-        initialValue = 0f,
-        targetValue = 1f,
-        animationSpec = infiniteRepeatable(
-            animation = keyframes {
-                this.durationMillis = durationMillis
-                0f at 0 with easing
-                1f at durationMillis with easing
-            },
-            RepeatMode.Restart,
-            StartOffset(offsetMillis)
-        )
-    )
-}
-
-@Composable
-internal fun InfiniteTransition.chasingDotPathMultiplierTransition2(
-    durationMillis: Int,
-    offsetMillis: Int = 0,
-    easing: Easing = LinearEasing
-): State<Float> {
-    return animateFloat(
-        initialValue = 0.5f,
-        targetValue = 1f,
-        animationSpec = infiniteRepeatable(
-            animation = keyframes {
-                this.durationMillis = durationMillis
-                0.5f at 0 with easing
-                1f at durationMillis / 2 with easing
-                1.5f at durationMillis with easing
-            },
-            RepeatMode.Restart,
-            StartOffset(offsetMillis)
-        )
-    )
-}
-
-@Composable
-internal fun InfiniteTransition.chasingDotRadiusMultiplierTransition(
-    initialValue: Float,
-    targetValue: Float,
-    durationMillis: Int,
-    offsetMillis: Int = 0,
-    easing: Easing = FastOutSlowInEasing
-): State<Float> {
-    return animateFloat(
-        initialValue = initialValue,
-        targetValue = targetValue,
-        animationSpec = infiniteRepeatable(
-            animation = keyframes {
-                this.durationMillis = durationMillis * 2
-                initialValue at 0 with easing
-                targetValue at durationMillis with easing
-                initialValue at durationMillis * 2 with easing
-            },
-            RepeatMode.Restart,
-            StartOffset(offsetMillis = offsetMillis)
-        )
-    )
 }

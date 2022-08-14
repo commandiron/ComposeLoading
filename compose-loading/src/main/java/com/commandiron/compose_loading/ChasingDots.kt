@@ -21,9 +21,9 @@ import kotlin.math.*
 @Composable
 fun ChasingDots(
     modifier: Modifier = Modifier,
-    size: Dp = 30.dp,
     durationMillis: Int = 2000,
     delayBetweenDotsMillis: Int = 50,
+    size: Dp = 30.dp,
     color: Color = MaterialTheme.colorScheme.surface,
     circleRatio: Float = 0.25f
 ) {

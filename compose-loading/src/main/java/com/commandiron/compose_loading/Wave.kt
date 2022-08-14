@@ -18,9 +18,9 @@ import com.commandiron.compose_loading.transition.fractionTransition
 @Composable
 fun Wave(
     modifier: Modifier = Modifier,
-    size: Dp = 24.dp,
     durationMillis: Int = 1200,
     delayMillis: Int = 400,
+    size: Dp = 24.dp,
     color: Color = MaterialTheme.colorScheme.surface,
     shape: Shape = Shapes.None,
 ) {
