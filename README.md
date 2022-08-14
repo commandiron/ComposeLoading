@@ -47,7 +47,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   <td>
  
    ```kotlin  
-   RotatingPlane()
+   ChasingDots()
    ``` 
   </td>
   <td>
@@ -58,7 +58,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   <td>
  
    ```kotlin  
-   RotatingPlane()
+   DoubleBounce()
    ``` 
   </td>
  </tr>
@@ -72,7 +72,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   <td>
  
   ```kotlin  
-  RotatingPlane()
+  Wave()
   ``` 
   </td>
   <td>
@@ -83,7 +83,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   <td>
  
   ```kotlin  
-  RotatingPlane()
+  WanderingCubes()
   ``` 
   </td>
   <td>
@@ -94,7 +94,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   <td>
  
   ```kotlin  
-  RotatingPlane()
+  Pulse()
   ``` 
   </td>
  </tr>
@@ -108,7 +108,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   <td>
  
   ```kotlin  
-  RotatingPlane()
+  ChasingTwoDots()
   ``` 
   </td>
   <td>
@@ -119,7 +119,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   <td>
  
   ```kotlin  
-  RotatingPlane()
+  ThreeBounce()
   ``` 
   </td>
   <td>
@@ -130,7 +130,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   <td>
  
   ```kotlin  
-  RotatingPlane()
+  Circle()
   ``` 
   </td>
  </tr>
@@ -144,7 +144,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   <td>
  
   ```kotlin  
-  RotatingPlane()
+  CubeGrid()
   ``` 
   </td>
   <td>
@@ -155,7 +155,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   <td>
  
   ```kotlin  
-  RotatingPlane()
+  FadingCircle()
   ``` 
   </td>
   <td>
@@ -166,7 +166,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   <td>
  
   ```kotlin  
-  RotatingPlane()
+  FoldingCube()
   ``` 
   </td>
  </tr>
@@ -180,7 +180,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   <td>
  
   ```kotlin  
-  RotatingPlane()
+  InstaSpinner()
   ``` 
   </td>
   <td>
@@ -191,7 +191,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   <td>
  
   ```kotlin  
-  RotatingPlane()
+  LoadingBar()
   ``` 
   </td>
   <td>
@@ -202,7 +202,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   <td>
  
   ```kotlin  
-  RotatingPlane()
+  LoadingDots("Loading")
   ``` 
   </td>
  </tr>
