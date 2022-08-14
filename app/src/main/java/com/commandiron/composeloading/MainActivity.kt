@@ -72,7 +72,7 @@ fun ShowScreen() {
 
                 12 -> { FoldingCube(Modifier.background(StarCommandBlue).fillMaxSize()) }
 
-                13 -> { LoadingBar(fakeMillis = 10000) }
+                13 -> { LoadingBar(fakeMillis = 10000, fillColor = Bluetiful) }
 
                 14 -> { LoadingDots("Loading") }
             }

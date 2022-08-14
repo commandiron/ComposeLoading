@@ -34,7 +34,7 @@ fun LoadingBar(
     width: Dp = 200.dp,
     backgroundColor: Color = MaterialTheme.colorScheme.background,
     fillColor: Color = MaterialTheme.colorScheme.primary,
-    borderColor: Color = Color.Black
+    borderColor: Color = MaterialTheme.colorScheme.onPrimary
 ) {
     val loadingBarProgress = remember {
         Animatable(0f)

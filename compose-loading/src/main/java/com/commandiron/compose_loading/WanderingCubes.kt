@@ -21,7 +21,7 @@ fun WanderingCubes(
     modifier: Modifier = Modifier,
     durationMillis: Int = 1800,
     size: DpSize = DpSize(30.dp, 30.dp),
-    color: Color = MaterialTheme.colorScheme.surface,
+    color: Color = MaterialTheme.colorScheme.primary,
 ) {
     val transition = rememberInfiniteTransition()
 

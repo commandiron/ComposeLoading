@@ -24,7 +24,7 @@ fun ChasingDots(
     durationMillis: Int = 2000,
     delayBetweenDotsMillis: Int = 50,
     size: Dp = 30.dp,
-    color: Color = MaterialTheme.colorScheme.surface,
+    color: Color = MaterialTheme.colorScheme.primary,
     circleRatio: Float = 0.25f
 ) {
     val transition = rememberInfiniteTransition()

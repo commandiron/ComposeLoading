@@ -25,7 +25,7 @@ fun RotatingPlane(
     durationMillis: Int = 1200,
     delayMillis: Int = 0,
     size: DpSize = DpSize(30.dp, 30.dp),
-    color: Color = MaterialTheme.colorScheme.surface,
+    color: Color = MaterialTheme.colorScheme.primary,
     shape: Shape = RectangleShape,
     contentOnPlane: @Composable BoxScope. () -> Unit = {}
 ) {

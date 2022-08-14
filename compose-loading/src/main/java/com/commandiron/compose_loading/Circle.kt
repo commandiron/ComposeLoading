@@ -19,7 +19,7 @@ fun Circle(
     size: Dp = 30.dp,
     durationMillis: Int = 1400,
     delayMillis: Int = 0,
-    color: Color = MaterialTheme.colorScheme.surface,
+    color: Color = MaterialTheme.colorScheme.primary,
     shape: Shape = CircleShape,
 ) {
     Box(

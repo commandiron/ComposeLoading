@@ -22,7 +22,7 @@ fun Wave(
     durationMillis: Int = 1200,
     delayMillis: Int = 400,
     size: Dp = 24.dp,
-    color: Color = MaterialTheme.colorScheme.surface,
+    color: Color = MaterialTheme.colorScheme.primary,
     shape: Shape = RectangleShape,
 ) {
     val transition = rememberInfiniteTransition()

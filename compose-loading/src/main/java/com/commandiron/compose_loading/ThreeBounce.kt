@@ -18,11 +18,11 @@ import com.commandiron.compose_loading.transition.fractionTransition
 @Composable
 fun ThreeBounce(
     modifier: Modifier = Modifier,
-    size: DpSize = DpSize(30.dp, 30.dp),
-    color: Color = MaterialTheme.colorScheme.surface,
-    shape: Shape = CircleShape,
     durationMillis: Int = 1400,
-    delayBetweenDotsMillis: Int = 160
+    delayBetweenDotsMillis: Int = 160,
+    size: DpSize = DpSize(30.dp, 30.dp),
+    color: Color = MaterialTheme.colorScheme.primary,
+    shape: Shape = CircleShape
 ) {
     val transition = rememberInfiniteTransition()
 
