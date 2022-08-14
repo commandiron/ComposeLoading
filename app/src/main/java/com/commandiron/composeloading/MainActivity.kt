@@ -44,7 +44,7 @@ fun ShowScreen() {
             }
         }
     ) {
-        HorizontalPager(state = state, count = 15) {
+        HorizontalPager(state = state, count = 16) {
             when(currentPage){
                 0 -> { ShowGrid() }
 
@@ -72,9 +72,11 @@ fun ShowScreen() {
 
                 12 -> { FoldingCube(Modifier.background(StarCommandBlue).fillMaxSize()) }
 
-                13 -> { LoadingBar(fakeMillis = 10000, fillColor = Bluetiful) }
+                13 -> { InstaSpinner(Modifier.background(BattleshipGrey).fillMaxSize()) }
 
-                14 -> { LoadingDots("Loading") }
+                14 -> { LoadingBar(Modifier.background(MaximumYellowRed).fillMaxSize(), fakeMillis = 10000, fillColor = Bluetiful) }
+
+                15 -> { LoadingDots(Modifier.background(GOGreen).fillMaxSize(),"Loading") }
             }
         }
     }

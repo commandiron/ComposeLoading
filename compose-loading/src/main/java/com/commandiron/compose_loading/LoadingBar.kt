@@ -30,7 +30,6 @@ fun LoadingBar(
     modifier: Modifier = Modifier,
     @FloatRange(from = 0.0, to = 1.0) progress: Float = 0.0f,
     fakeMillis: Int = 0,
-    thickness: Dp = 16.dp,
     width: Dp = 200.dp,
     backgroundColor: Color = MaterialTheme.colorScheme.background,
     fillColor: Color = MaterialTheme.colorScheme.primary,
@@ -66,11 +65,11 @@ fun LoadingBar(
     ) {
         Surface(
             modifier = Modifier
-                .height(thickness)
+                .height(width / 12)
                 .width(width),
             color = backgroundColor,
-            shape = RoundedCornerShape(thickness),
-            border = BorderStroke(thickness / 10, borderColor)
+            shape = RoundedCornerShape(width / 12),
+            border = BorderStroke(width / 120, borderColor)
         ) {
             Canvas(
                 modifier = Modifier.fillMaxSize(),

@@ -1,5 +1,6 @@
 package com.commandiron.compose_loading
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.LocalTextStyle
@@ -8,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
@@ -15,6 +17,7 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun LoadingDots(
+    modifier: Modifier = Modifier,
     text: String? = null,
     style: TextStyle = LocalTextStyle.current,
     color: Color = LocalContentColor.current,
@@ -32,10 +35,13 @@ fun LoadingDots(
             dotText.value = ""
         }
     }
-    Row {
+    Row(
+        modifier = modifier,
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
         if(text != null){
             Text(
-                modifier = Modifier.alignByBaseline(),
                 text = dotText.value,
                 color = color.copy(alpha = 0f),
                 style = style
@@ -46,7 +52,6 @@ fun LoadingDots(
                 color = color
             )
             Text(
-                modifier = Modifier.alignByBaseline(),
                 text = dotText.value,
                 style = style,
                 color = color
