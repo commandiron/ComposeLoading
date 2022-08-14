@@ -1,4 +1,5 @@
-# ComposeLoading
+# ComposeLoading [![](https://jitpack.io/v/commandiron/ComposeLoading.svg)](https://jitpack.io/#commandiron/ComposeLoading)
+
 
 Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spinkit/) with additionals.
 
