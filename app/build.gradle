@@ -31,6 +31,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        freeCompilerArgs += [
+                "-opt-in=com.google.accompanist.pager.ExperimentalPagerApi",
+        ]
     }
     buildFeatures {
         compose true

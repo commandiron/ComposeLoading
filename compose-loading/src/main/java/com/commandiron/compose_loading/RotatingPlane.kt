@@ -11,6 +11,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.DpSize
@@ -25,7 +26,7 @@ fun RotatingPlane(
     delayMillis: Int = 0,
     size: DpSize = DpSize(30.dp, 30.dp),
     color: Color = MaterialTheme.colorScheme.surface,
-    shape: Shape = Shapes.None,
+    shape: Shape = RectangleShape,
     contentOnPlane: @Composable BoxScope. () -> Unit = {}
 ) {
     val transition = rememberInfiniteTransition()

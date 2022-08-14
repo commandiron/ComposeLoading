@@ -14,7 +14,6 @@ import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.PagerState
 
-@OptIn(ExperimentalPagerApi::class)
 @Composable
 fun ShowCase(
     modifier: Modifier = Modifier,

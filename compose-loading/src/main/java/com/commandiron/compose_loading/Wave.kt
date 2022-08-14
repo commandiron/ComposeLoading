@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -22,7 +23,7 @@ fun Wave(
     delayMillis: Int = 400,
     size: Dp = 24.dp,
     color: Color = MaterialTheme.colorScheme.surface,
-    shape: Shape = Shapes.None,
+    shape: Shape = RectangleShape,
 ) {
     val transition = rememberInfiniteTransition()
 
