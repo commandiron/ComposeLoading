@@ -6,62 +6,206 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 ## How it looks
 
 <table>
-<tr><td><div align="center">Preview</div></td></tr>
-<tr>
-<td>
-<div align="center">
-<img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="230" height="230">
-</div>
-</td>
-</tr>
+ <tr>
+  <td>
+   <div align="center">Preview</div></td>
+ </tr>
+ <tr>
+  <td>
+   <div align="center"><img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="230" height="230"></div>   </td>
+ </tr>
 </table>
 
 <table>
-<tr><td><div align="center">Spinner</div></td><td><div align="center">Usage</div></td></tr>
- 
-<tr>
-<td>
-<div align="center">
-<img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
-</div>
-</td>
- 
-<td>
- 
-```kotlin  
-RotatingPlane()
-``` 
-</td>
+ <tr>
+  <td><div align="center">Spinner</div></td>
+  <td><div align="center">Usage</div></td>
+  <td><div align="center">Spinner</div></td>
+  <td><div align="center">Usage</div></td>
+  <td><div align="center">Spinner</div></td>
+  <td><div align="center">Usage</div></td>
 </tr>
  
-<tr>
-<td>
-<div align="center">
-<img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
-</div>
-</td>
-<td>
+ <tr>
+  <td>
+   <div align="center">
+     <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115"
+   </div>
+  </td>
  
-```kotlin  
-RotatingPlane()
-``` 
-</td>
-</tr>
+  <td>
  
-<tr>
-<td>
-<div align="center">
-<img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
-</div>
-</td>
-<td>
+   ```kotlin  
+   RotatingPlane()
+   ``` 
+  </td>
+  <td>
+   <div align="center">
+    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115"
+    </div>
+  </td>
+  <td>
  
-```kotlin  
-RotatingPlane()
-``` 
-</td>
-</tr>
+   ```kotlin  
+   RotatingPlane()
+   ``` 
+  </td>
+  <td>
+   <div align="center">
+    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115"
+    </div>
+  </td>
+  <td>
  
+   ```kotlin  
+   RotatingPlane()
+   ``` 
+  </td>
+ </tr>
+ 
+ <tr>
+  <td>
+   <div align="center">
+    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+   </div>
+  </td>
+  <td>
+ 
+  ```kotlin  
+  RotatingPlane()
+  ``` 
+  </td>
+  <td>
+   <div align="center">
+    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+   </div>
+  </td>
+  <td>
+ 
+  ```kotlin  
+  RotatingPlane()
+  ``` 
+  </td>
+  <td>
+   <div align="center">
+    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+   </div>
+  </td>
+  <td>
+ 
+  ```kotlin  
+  RotatingPlane()
+  ``` 
+  </td>
+ </tr>
+ 
+ <tr>
+  <td>
+   <div align="center">
+    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+   </div>
+  </td>
+  <td>
+ 
+  ```kotlin  
+  RotatingPlane()
+  ``` 
+  </td>
+  <td>
+   <div align="center">
+    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+   </div>
+  </td>
+  <td>
+ 
+  ```kotlin  
+  RotatingPlane()
+  ``` 
+  </td>
+  <td>
+   <div align="center">
+    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+   </div>
+  </td>
+  <td>
+ 
+  ```kotlin  
+  RotatingPlane()
+  ``` 
+  </td>
+ </tr>
+ 
+ <tr>
+  <td>
+   <div align="center">
+    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+   </div>
+  </td>
+  <td>
+ 
+  ```kotlin  
+  RotatingPlane()
+  ``` 
+  </td>
+  <td>
+   <div align="center">
+    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+   </div>
+  </td>
+  <td>
+ 
+  ```kotlin  
+  RotatingPlane()
+  ``` 
+  </td>
+  <td>
+   <div align="center">
+    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+   </div>
+  </td>
+  <td>
+ 
+  ```kotlin  
+  RotatingPlane()
+  ``` 
+  </td>
+ </tr>
+ 
+ <tr>
+  <td>
+   <div align="center">
+    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+   </div>
+  </td>
+  <td>
+ 
+  ```kotlin  
+  RotatingPlane()
+  ``` 
+  </td>
+  <td>
+   <div align="center">
+    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+   </div>
+  </td>
+  <td>
+ 
+  ```kotlin  
+  RotatingPlane()
+  ``` 
+  </td>
+  <td>
+   <div align="center">
+    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+   </div>
+  </td>
+  <td>
+ 
+  ```kotlin  
+  RotatingPlane()
+  ``` 
+  </td>
+ </tr>
  
 </table>
 
