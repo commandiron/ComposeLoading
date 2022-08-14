@@ -124,7 +124,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   </td>
   <td>
    <div align="center">
-    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+    <img src="https://user-images.githubusercontent.com/50905347/184554273-476e6cb6-e806-4bb0-adef-0fff0f136247.png" width="115" height="115">
    </div>
   </td>
   <td>
@@ -138,7 +138,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
  <tr>
   <td>
    <div align="center">
-    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+    <img src="https://user-images.githubusercontent.com/50905347/184554274-c0bf19f4-3e32-4920-8f66-ae14d478e859.png" width="115" height="115">
    </div>
   </td>
   <td>
@@ -149,7 +149,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   </td>
   <td>
    <div align="center">
-    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+    <img src="https://user-images.githubusercontent.com/50905347/184554275-0d1bd5e7-48a7-4828-8824-3fd8cfd6cb14.png" width="115" height="115">
    </div>
   </td>
   <td>
@@ -160,7 +160,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   </td>
   <td>
    <div align="center">
-    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+    <img src="https://user-images.githubusercontent.com/50905347/184554276-e17ff715-e102-4247-be3b-9a23684f303e.png" width="115" height="115">
    </div>
   </td>
   <td>
@@ -174,7 +174,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
  <tr>
   <td>
    <div align="center">
-    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+    <img src="https://user-images.githubusercontent.com/50905347/184554277-50a2ee51-2a17-4e22-9466-ddd0fcad9832.png" width="115" height="115">
    </div>
   </td>
   <td>
@@ -185,7 +185,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   </td>
   <td>
    <div align="center">
-    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+    <img src="https://user-images.githubusercontent.com/50905347/184554278-fbd17d1f-f5f3-4750-8eb7-cac7ef54f3f1.gif" width="115" height="115">
    </div>
   </td>
   <td>
@@ -196,7 +196,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   </td>
   <td>
    <div align="center">
-    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+    <img src="https://user-images.githubusercontent.com/50905347/184554279-298c17df-b8f4-498c-bdf5-b6f81c16ffbe.gif" width="115" height="115">
    </div>
   </td>
   <td>
