@@ -16,6 +16,10 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
  </tr>
 </table>
 
+|Spinner|Usage|
+|-------|-----|
+|<img src="https://user-images.githubusercontent.com/50905347/184547400-f804659d-47ab-44c0-b687-0b112b37feb6.gif" width="115" height="115">|``` RotatingPlane()```|
+
 <table>
  <tr>
   <td><div align="center">Spinner</div></td>
