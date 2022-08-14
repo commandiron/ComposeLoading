@@ -9,6 +9,8 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 |-------|
 |<img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="230" height="230">|
 
+## Usage
+
 |Spinner|Usage|Spinner|Usage|
 |-------|-----|-------|-----|
 |<img src="https://user-images.githubusercontent.com/50905347/184547400-f804659d-47ab-44c0-b687-0b112b37feb6.gif" width="115" height="115">|```RotatingPlane()```|<img src="https://user-images.githubusercontent.com/50905347/184547925-717f957e-35a1-48ee-9677-971c91e876e3.gif" width="115" height="115">|```ChasingDots()```|
