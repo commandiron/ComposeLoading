@@ -22,7 +22,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 <tr>
 <td>
 <div align="center">
-<img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+<img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="57.5" height="57.5">
 </div>
 </td>
  
@@ -37,7 +37,7 @@ RotatingPlane()
 <tr>
 <td>
 <div align="center">
-<img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+<img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="57.5" height="57.5">
 </div>
 </td>
 <td>
@@ -51,7 +51,7 @@ RotatingPlane()
 <tr>
 <td>
 <div align="center">
-<img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115">
+<img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="57.5" height="57.5">
 </div>
 </td>
 <td>
