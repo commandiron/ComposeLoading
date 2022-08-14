@@ -52,7 +52,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
   </td>
   <td>
    <div align="center">
-    <img src="https://user-images.githubusercontent.com/50905347/184544847-1321238a-8167-4ec6-81a4-78ec9ed8421c.gif" width="115" height="115"
+    <img src="https://user-images.githubusercontent.com/50905347/184548345-edcf0bd0-0b2b-44c9-aa09-d74f5ae6decf.gif" width="115" height="115"
     </div>
   </td>
   <td>
