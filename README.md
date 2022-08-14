@@ -44,7 +44,7 @@ LoadingBar(fakeMillis = 10000)
     
 ```kotlin  
     
-LoadingDots("Loading")
+LoadingDots(text = "Loading")
 ```
 </td> 
 </tr>
