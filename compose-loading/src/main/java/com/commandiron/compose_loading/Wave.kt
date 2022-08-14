@@ -14,7 +14,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.commandiron.compose_loading.transition.EaseInOut
 import com.commandiron.compose_loading.transition.fractionTransition
-import com.commandiron.compose_loading.transition.fractionTransitionDelayAtFirst
 
 @Composable
 fun Wave(
@@ -27,7 +26,7 @@ fun Wave(
 ) {
     val transition = rememberInfiniteTransition()
 
-    val aspectRatio1 = transition.fractionTransitionDelayAtFirst(
+    val aspectRatio1 = transition.fractionTransition(
         initialValue = 0.25f,
         targetValue = 0.1f,
         durationMillis = durationMillis / 5,
@@ -35,7 +34,7 @@ fun Wave(
         repeatMode = RepeatMode.Reverse,
         easing = EaseInOut
     )
-    val aspectRatio2 = transition.fractionTransitionDelayAtFirst(
+    val aspectRatio2 = transition.fractionTransition(
         initialValue = 0.25f,
         targetValue = 0.1f,
         durationMillis = durationMillis / 5,
@@ -44,7 +43,7 @@ fun Wave(
         repeatMode = RepeatMode.Reverse,
         easing = EaseInOut
     )
-    val aspectRatio3 = transition.fractionTransitionDelayAtFirst(
+    val aspectRatio3 = transition.fractionTransition(
         initialValue = 0.25f,
         targetValue = 0.1f,
         durationMillis = durationMillis / 5,
@@ -53,7 +52,7 @@ fun Wave(
         repeatMode = RepeatMode.Reverse,
         easing = EaseInOut
     )
-    val aspectRatio4 = transition.fractionTransitionDelayAtFirst(
+    val aspectRatio4 = transition.fractionTransition(
         initialValue = 0.25f,
         targetValue = 0.1f,
         durationMillis = durationMillis / 5,
@@ -62,7 +61,7 @@ fun Wave(
         repeatMode = RepeatMode.Reverse,
         easing = EaseInOut
     )
-    val aspectRatio5 = transition.fractionTransitionDelayAtFirst(
+    val aspectRatio5 = transition.fractionTransition(
         initialValue = 0.25f,
         targetValue = 0.1f,
         durationMillis = durationMillis / 5,

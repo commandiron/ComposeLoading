@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
+import com.commandiron.compose_loading.transition.EaseInOut
 import com.commandiron.compose_loading.transition.fractionTransition
 
 @Composable
@@ -34,16 +35,18 @@ fun RotatingPlane(
         targetValue = 180f,
         durationMillis = durationMillis / 2,
         delayMillis = durationMillis / 2 + delayMillis,
-        repeatMode = RepeatMode.Reverse
+        repeatMode = RepeatMode.Restart,
+        easing = EaseInOut
     )
 
     val rotationXValue = transition.fractionTransition(
         initialValue = 0f,
-        targetValue = 180f,
+        targetValue = -180f,
         durationMillis = durationMillis / 2,
         delayMillis = durationMillis / 2 + delayMillis,
         offsetMillis = durationMillis / 2 + delayMillis,
-        repeatMode = RepeatMode.Reverse
+        repeatMode = RepeatMode.Restart,
+        easing = EaseInOut
     )
 
     Box(

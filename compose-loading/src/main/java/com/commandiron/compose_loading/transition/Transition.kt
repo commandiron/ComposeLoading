@@ -21,7 +21,7 @@ internal fun InfiniteTransition.fractionTransition(
         targetValue = targetValue,
         animationSpec = infiniteRepeatable(
             animation = keyframes {
-                this.durationMillis = durationMillis + delayMillis
+                this.durationMillis = durationMillis
                 this.delayMillis = delayMillis
                 initialValue at 0 with easing
                 when(fraction){
@@ -52,10 +52,10 @@ internal fun InfiniteTransition.fractionTransition(
 }
 
 @Composable
-internal fun InfiniteTransition.fractionTransitionDelayAtFirst(
+internal fun InfiniteTransition.fractionTransitionToInitial(
     initialValue: Float,
     targetValue: Float,
-    @IntRange(from = 1, to = 4) fraction: Int = 1,
+    @IntRange(from = 2, to = 4) fraction: Int = 2,
     durationMillis: Int,
     delayMillis: Int = 0,
     offsetMillis: Int = 0,
@@ -67,30 +67,24 @@ internal fun InfiniteTransition.fractionTransitionDelayAtFirst(
         targetValue = targetValue,
         animationSpec = infiniteRepeatable(
             animation = keyframes {
-                this.durationMillis = durationMillis + delayMillis
+                this.durationMillis = durationMillis
+                this.delayMillis = delayMillis
                 initialValue at 0 with easing
                 when(fraction){
-                    1 ->{
-                        initialValue at delayMillis with easing
-                        targetValue at durationMillis + delayMillis with easing
-                    }
                     2 ->{
-                        initialValue at delayMillis with easing
                         targetValue / fraction at durationMillis / fraction with easing
-                        targetValue at durationMillis + delayMillis with easing
+                        initialValue at durationMillis with easing
                     }
                     3 ->{
-                        initialValue at delayMillis with easing
                         targetValue / fraction at durationMillis / fraction with easing
                         targetValue / fraction * 2 at durationMillis / fraction * 2 with easing
-                        targetValue at durationMillis + delayMillis with easing
+                        initialValue at durationMillis with easing
                     }
                     4 ->{
-                        initialValue at delayMillis with easing
                         targetValue / fraction at durationMillis / fraction with easing
                         targetValue / fraction * 2 at durationMillis / fraction * 2 with easing
                         targetValue / fraction * 3 at durationMillis / fraction * 3 with easing
-                        targetValue at durationMillis + delayMillis with easing
+                        initialValue at durationMillis with easing
                     }
                 }
             },

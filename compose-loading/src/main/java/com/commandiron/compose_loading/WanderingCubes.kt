@@ -15,8 +15,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import com.commandiron.compose_loading.transition.EaseInOut
-import com.commandiron.compose_loading.transition.fractionTransition
-import com.commandiron.compose_loading.transition.fractionTransitionDelayAtFirst
 
 @Composable
 fun WanderingCubes(
@@ -29,56 +27,38 @@ fun WanderingCubes(
 
     val durationPerFraction = durationMillis / 4
 
-    val x1Multiplier = transition.fractionTransition(
-        initialValue = 0f,
-        targetValue = 1f,
-        durationMillis = durationPerFraction,
-        delayMillis = durationMillis / 8,
-        repeatMode = RepeatMode.Reverse,
-        easing = EaseInOut
-    )
-    val y1Multiplier = transition.fractionTransition(
-        initialValue = 0f,
-        targetValue = 1f,
-        durationMillis = durationPerFraction,
-        delayMillis = durationMillis / 8,
-        offsetMillis = durationPerFraction,
-        repeatMode = RepeatMode.Reverse,
-        easing = EaseInOut
-    )
-    val x2Multiplier = transition.fractionTransition(
+    val x1Multiplier = transition.wanderingCubesTransition(
         initialValue = 1f,
         targetValue = 0f,
-        durationMillis = durationPerFraction,
-        delayMillis = durationMillis / 8,
-        repeatMode = RepeatMode.Reverse,
-        easing = EaseInOut
+        durationMillisPerFraction = durationPerFraction
     )
-    val y2Multiplier = transition.fractionTransition(
+    val y1Multiplier = transition.wanderingCubesTransition(
         initialValue = 1f,
         targetValue = 0f,
-        durationMillis = durationPerFraction,
-        delayMillis = durationMillis / 8,
-        offsetMillis = durationPerFraction,
-        repeatMode = RepeatMode.Reverse,
-        easing = EaseInOut
+        durationMillisPerFraction = durationPerFraction,
+        offsetMillis = durationPerFraction
+    )
+    val x2Multiplier = transition.wanderingCubesTransition(
+        initialValue = 0f,
+        targetValue = 1f,
+        durationMillisPerFraction = durationPerFraction
+    )
+    val y2Multiplier = transition.wanderingCubesTransition(
+        initialValue = 0f,
+        targetValue = 1f,
+        durationMillisPerFraction = durationPerFraction,
+        offsetMillis = durationPerFraction
     )
 
-    val rectHeightMultiplier = transition.fractionTransitionDelayAtFirst(
-        initialValue = 1f,
-        targetValue = 2f,
-        durationMillis = durationPerFraction,
-        delayMillis = durationPerFraction / 2,
-        repeatMode = RepeatMode.Reverse,
-        easing = LinearEasing
+    val rectHeightMultiplier = transition.wanderingCubesTransition(
+        initialValue = 2f,
+        targetValue = 1f,
+        durationMillisPerFraction = durationPerFraction / 2
     )
-    val rectWidthMultiplier = transition.fractionTransitionDelayAtFirst(
-        initialValue = 1f,
-        targetValue = 2f,
-        durationMillis = durationPerFraction,
-        delayMillis = durationPerFraction / 2,
-        repeatMode = RepeatMode.Reverse,
-        easing = LinearEasing
+    val rectWidthMultiplier = transition.wanderingCubesTransition(
+        initialValue = 2f,
+        targetValue = 1f,
+        durationMillisPerFraction = durationPerFraction / 2
     )
 
     Box(
@@ -91,6 +71,8 @@ fun WanderingCubes(
 
             val rectWidth = width / 6
             val rectHeight = height / 6
+            val defaultRectSize = Size(rectWidth, rectHeight)
+
             val rectSize = Size(
                 width = rectWidth * rectWidthMultiplier.value,
                 height = rectHeight * rectHeightMultiplier.value
@@ -111,7 +93,7 @@ fun WanderingCubes(
             val y2 = y2Multiplier.value * effectiveHeight
             drawRect(
                 color = color,
-                size = Size(rectWidth, rectHeight),
+                size = rectSize,
                 topLeft = Offset(x2,y2)
             )
         }
@@ -119,12 +101,12 @@ fun WanderingCubes(
 }
 
 @Composable
-internal fun InfiniteTransition.offsetMultiplierTransition(
+internal fun InfiniteTransition.wanderingCubesTransition(
     initialValue: Float,
     targetValue: Float,
     durationMillisPerFraction: Int,
     offsetMillis: Int = 0,
-    easing: Easing = FastOutSlowInEasing
+    easing: Easing = EaseInOut
 ): State<Float> {
     return animateFloat(
         initialValue = initialValue,
@@ -136,32 +118,6 @@ internal fun InfiniteTransition.offsetMultiplierTransition(
                 targetValue at durationMillisPerFraction with easing
                 targetValue at durationMillisPerFraction * 2 with easing
                 initialValue at durationMillisPerFraction * 3 with easing
-                initialValue at durationMillisPerFraction * 4 with easing
-            },
-            RepeatMode.Restart,
-            StartOffset(offsetMillis)
-        )
-    )
-}
-
-@Composable
-internal fun InfiniteTransition.sizeMultiplierTransition(
-    initialValue: Float,
-    targetValue: Float,
-    durationMillisPerFraction: Int,
-    offsetMillis: Int = 0,
-    easing: Easing = FastOutSlowInEasing
-): State<Float> {
-    return animateFloat(
-        initialValue = initialValue,
-        targetValue = targetValue,
-        animationSpec = infiniteRepeatable(
-            animation = keyframes {
-                this.durationMillis = durationMillisPerFraction * 4
-                initialValue at 0 with easing
-                targetValue at durationMillisPerFraction with easing
-                initialValue at durationMillisPerFraction * 2 with easing
-                targetValue at durationMillisPerFraction * 3 with easing
                 initialValue at durationMillisPerFraction * 4 with easing
             },
             RepeatMode.Restart,
