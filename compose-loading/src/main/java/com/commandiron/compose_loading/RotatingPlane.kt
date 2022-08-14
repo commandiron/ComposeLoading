@@ -29,19 +29,21 @@ fun RotatingPlane(
 ) {
     val transition = rememberInfiniteTransition()
 
-    val rotationYValue by transition.fractionTransition(
-        initialValue = 0f,
-        targetValue = 180f,
-        durationMillis = durationMillis / 2,
-        delayMillis = durationMillis / 2 + delayMillis
-    )
-
-    val rotationXValue by transition.fractionTransition(
+    val rotationYValue = transition.fractionTransition(
         initialValue = 0f,
         targetValue = 180f,
         durationMillis = durationMillis / 2,
         delayMillis = durationMillis / 2 + delayMillis,
-        offsetMillis = durationMillis / 2
+        repeatMode = RepeatMode.Reverse
+    )
+
+    val rotationXValue = transition.fractionTransition(
+        initialValue = 0f,
+        targetValue = 180f,
+        durationMillis = durationMillis / 2,
+        delayMillis = durationMillis / 2 + delayMillis,
+        offsetMillis = durationMillis / 2 + delayMillis,
+        repeatMode = RepeatMode.Reverse
     )
 
     Box(
@@ -52,8 +54,8 @@ fun RotatingPlane(
             modifier = Modifier
                 .size(size)
                 .graphicsLayer {
-                    rotationY = rotationYValue
-                    rotationX = rotationXValue
+                    rotationY = rotationYValue.value
+                    rotationX = rotationXValue.value
                 },
             color = color,
             shape = shape

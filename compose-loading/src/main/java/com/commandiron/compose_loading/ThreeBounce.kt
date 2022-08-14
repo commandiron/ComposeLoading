@@ -1,18 +1,19 @@
 package com.commandiron.compose_loading
 
+import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.commandiron.compose_loading.transition.fractionTransition
 
 @Composable
 fun ThreeBounce(
@@ -25,22 +26,28 @@ fun ThreeBounce(
 ) {
     val transition = rememberInfiniteTransition()
 
-    val sizeMultiplier1 by transition.fraction3Transition(
+    val sizeMultiplier1 = transition.fractionTransition(
         initialValue = 0f,
         targetValue = 1f,
-        durationMillis = durationMillis,
+        fraction = 1,
+        durationMillis = durationMillis / 2,
+        repeatMode = RepeatMode.Reverse
     )
-    val sizeMultiplier2 by transition.fraction3Transition(
+    val sizeMultiplier2 = transition.fractionTransition(
         initialValue = 0f,
         targetValue = 1f,
-        durationMillis = durationMillis,
-        offsetMillis = delayBetweenDots
+        fraction = 1,
+        durationMillis = durationMillis / 2,
+        offsetMillis = delayBetweenDots,
+        repeatMode = RepeatMode.Reverse
     )
-    val sizeMultiplier3 by transition.fraction3Transition(
+    val sizeMultiplier3 = transition.fractionTransition(
         initialValue = 0f,
         targetValue = 1f,
-        durationMillis = durationMillis,
-        offsetMillis = delayBetweenDots * 2
+        fraction = 1,
+        durationMillis = durationMillis / 2,
+        offsetMillis = delayBetweenDots * 2,
+        repeatMode = RepeatMode.Reverse
     )
 
     Box(
@@ -50,7 +57,7 @@ fun ThreeBounce(
         Row() {
             Box(modifier = Modifier.size(size / 3), contentAlignment = Alignment.Center) {
                 Surface(
-                    modifier = Modifier.size(size / 3 * sizeMultiplier1),
+                    modifier = Modifier.size(size / 3 * sizeMultiplier1.value),
                     shape = shape,
                     color = color
                 ) {}
@@ -58,7 +65,7 @@ fun ThreeBounce(
             Spacer(modifier = Modifier.width(size / 3 / 4))
             Box(modifier = Modifier.size(size / 3), contentAlignment = Alignment.Center) {
                 Surface(
-                    modifier = Modifier.size(size / 3 * sizeMultiplier2),
+                    modifier = Modifier.size(size / 3 * sizeMultiplier2.value),
                     shape = shape,
                     color = color
                 ) {}
@@ -66,7 +73,7 @@ fun ThreeBounce(
             Spacer(modifier = Modifier.width(size / 3 / 4))
             Box(modifier = Modifier.size(size / 3), contentAlignment = Alignment.Center) {
                 Surface(
-                    modifier = Modifier.size(size / 3 * sizeMultiplier3),
+                    modifier = Modifier.size(size / 3 * sizeMultiplier3.value),
                     shape = shape,
                     color = color
                 ) {}

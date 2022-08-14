@@ -13,85 +13,71 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
+import com.commandiron.compose_loading.transition.EaseInOut
+import com.commandiron.compose_loading.transition.fractionTransition
 
 @Composable
 fun DoubleBounce(
     modifier: Modifier = Modifier,
     size: DpSize = DpSize(30.dp, 30.dp),
-    durationMillis: Int = 1000,
+    durationMillis: Int = 2000,
+    delayMillis: Int = 0,
     color: Color = MaterialTheme.colorScheme.surface,
     shape: Shape = CircleShape
 ) {
     val transition = rememberInfiniteTransition()
 
-    val sizeMultiplier1 by transition.fraction3Transition(
-        durationMillis = durationMillis,
-        repeatMode = RepeatMode.Reverse
+    val sizeMultiplier1 = transition.fractionTransition(
+        initialValue = 0f,
+        targetValue = 1f,
+        durationMillis = durationMillis / 2,
+        delayMillis = delayMillis,
+        repeatMode = RepeatMode.Reverse,
+        easing = EaseInOut
     )
 
-    val sizeMultiplier2 by transition.fraction3Transition2(
-        durationMillis = durationMillis,
-        repeatMode = RepeatMode.Reverse
+    val alphaMultiplier1 = transition.fractionTransition(
+        initialValue = 1f,
+        targetValue = 0.5f,
+        durationMillis = durationMillis / 2,
+        delayMillis = delayMillis,
+        repeatMode = RepeatMode.Reverse,
+        easing = EaseInOut
     )
+
+    val sizeMultiplier2 = transition.fractionTransition(
+        initialValue = 0f,
+        targetValue = 1f,
+        durationMillis = durationMillis / 2,
+        delayMillis = delayMillis,
+        offsetMillis = durationMillis / 2,
+        repeatMode = RepeatMode.Reverse,
+        easing = EaseInOut
+    )
+
+    val alphaMultiplier2 = transition.fractionTransition(
+        initialValue = 1f,
+        targetValue = 0.5f,
+        durationMillis = durationMillis / 2,
+        delayMillis = delayMillis,
+        offsetMillis = durationMillis / 2,
+        repeatMode = RepeatMode.Reverse,
+        easing = EaseInOut
+    )
+
     Box(
         modifier = modifier,
         contentAlignment = Alignment.Center
     ){
         Surface(
-            modifier = Modifier.size(size * sizeMultiplier1),
+            modifier = Modifier.size(size * sizeMultiplier1.value),
             shape = shape,
-            color = color.copy(alpha = 0.5f)
+            color = color.copy(alphaMultiplier1.value)
         ) {}
         Surface(
-            modifier = Modifier.size(size * sizeMultiplier2),
+            modifier = Modifier.size(size * sizeMultiplier2.value),
             shape = shape,
-            color = color
+            color = color.copy(alphaMultiplier2.value)
         ) {}
     }
-}
-
-@Composable
-internal fun InfiniteTransition.fraction3Transition(
-    durationMillis: Int,
-    offsetMillis: Int = 0,
-    repeatMode: RepeatMode = RepeatMode.Restart,
-    easing: Easing = FastOutSlowInEasing
-): State<Float> {
-    return animateFloat(
-        initialValue = 0.5f,
-        targetValue = 1f,
-        animationSpec = infiniteRepeatable(
-            animation = keyframes {
-                this.durationMillis = durationMillis
-                0.5f at 0 with easing
-                1f at durationMillis with easing
-                0.5f at durationMillis * 2 with easing
-            },
-            repeatMode,
-            StartOffset(offsetMillis)
-        )
-    )
-}
-
-@Composable
-internal fun InfiniteTransition.fraction3Transition2(
-    durationMillis: Int,
-    offsetMillis: Int = 0,
-    repeatMode: RepeatMode = RepeatMode.Restart,
-    easing: Easing = FastOutSlowInEasing
-): State<Float> {
-    return animateFloat(
-        initialValue = 0f,
-        targetValue = 0.5f,
-        animationSpec = infiniteRepeatable(
-            animation = keyframes {
-                this.durationMillis = durationMillis
-                0.5f at 0 with easing
-                0f at durationMillis with easing
-                0.5f at durationMillis * 2 with easing
-            },
-            repeatMode,
-            StartOffset(offsetMillis)
-        )
-    )
 }

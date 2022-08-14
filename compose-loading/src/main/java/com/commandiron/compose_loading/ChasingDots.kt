@@ -1,90 +1,108 @@
 package com.commandiron.compose_loading
 
-import androidx.compose.animation.core.*
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.commandiron.compose_loading.transition.fraction4Transition
+import com.commandiron.compose_loading.transition.EaseInOut
+import com.commandiron.compose_loading.transition.fractionTransition
 import kotlin.math.*
 
 @Composable
 fun ChasingDots(
     modifier: Modifier = Modifier,
     size: Dp = 30.dp,
-    durationMillis: Int = 2500,
+    durationMillis: Int = 2000,
     delayBetweenDotsMillis: Int = 50,
-    circleRatio: Float = 0.25f,
-    color: Color = MaterialTheme.colorScheme.surface
+    color: Color = MaterialTheme.colorScheme.surface,
+    circleRatio: Float = 0.25f
 ) {
     val transition = rememberInfiniteTransition()
 
-    val pathAngleMultiplier1 = transition.fraction4Transition(
+    val pathAngleMultiplier1 = transition.fractionTransition(
         initialValue = 0f,
         targetValue = 7f,
-        durationMillis = durationMillis * 4
-    )
-    val pathAngleMultiplier2 = transition.fraction4Transition(
-        initialValue = 0f,
-        targetValue = 7f,
+        fraction = 4,
         durationMillis = durationMillis * 4,
-        offsetMillis = delayBetweenDotsMillis
+        easing = EaseInOut
     )
-    val pathAngleMultiplier3 = transition.fraction4Transition(
+    val pathAngleMultiplier2 = transition.fractionTransition(
         initialValue = 0f,
         targetValue = 7f,
+        fraction = 4,
         durationMillis = durationMillis * 4,
-        offsetMillis = delayBetweenDotsMillis * 2
+        offsetMillis = delayBetweenDotsMillis,
+        easing = EaseInOut
     )
-    val pathAngleMultiplier4 = transition.fraction4Transition(
+    val pathAngleMultiplier3 = transition.fractionTransition(
         initialValue = 0f,
         targetValue = 7f,
+        fraction = 4,
         durationMillis = durationMillis * 4,
-        offsetMillis = delayBetweenDotsMillis * 3
+        offsetMillis = delayBetweenDotsMillis * 2,
+        easing = EaseInOut
     )
-    val pathAngleMultiplier5 = transition.fraction4Transition(
+    val pathAngleMultiplier4 = transition.fractionTransition(
         initialValue = 0f,
         targetValue = 7f,
+        fraction = 4,
         durationMillis = durationMillis * 4,
-        offsetMillis = delayBetweenDotsMillis * 4
+        offsetMillis = delayBetweenDotsMillis * 3,
+        easing = EaseInOut
     )
-    val pathAngleMultiplier6 = transition.fraction4Transition(
+    val pathAngleMultiplier5 = transition.fractionTransition(
         initialValue = 0f,
         targetValue = 7f,
+        fraction = 4,
         durationMillis = durationMillis * 4,
-        offsetMillis = delayBetweenDotsMillis * 5
+        offsetMillis = delayBetweenDotsMillis * 4,
+        easing = EaseInOut
     )
-
-    val circleRadiusMultiplier3 = transition.chasingDotsRadiusMultiplierTransition(
+    val pathAngleMultiplier6 = transition.fractionTransition(
+        initialValue = 0f,
+        targetValue = 7f,
+        fraction = 4,
+        durationMillis = durationMillis * 4,
+        offsetMillis = delayBetweenDotsMillis * 5,
+        easing = EaseInOut
+    )
+    val circleRadiusMultiplier3 = transition.fractionTransition(
         initialValue = 0.512f,
         targetValue = circleRatio,
         durationMillis = durationMillis / 2,
-        offsetMillis = delayBetweenDotsMillis * 3
+        repeatMode = RepeatMode.Reverse,
+        easing = LinearEasing
     )
-    val circleRadiusMultiplier4 = transition.chasingDotsRadiusMultiplierTransition(
+    val circleRadiusMultiplier4 = transition.fractionTransition(
         initialValue = 0.64f,
         targetValue = circleRatio,
         durationMillis = durationMillis / 2,
-        offsetMillis = delayBetweenDotsMillis * 2
+        repeatMode = RepeatMode.Reverse,
+        easing = LinearEasing
     )
-    val circleRadiusMultiplier5 = transition.chasingDotsRadiusMultiplierTransition(
+    val circleRadiusMultiplier5 = transition.fractionTransition(
         initialValue = 0.8f,
         targetValue = circleRatio,
         durationMillis = durationMillis / 2,
-        offsetMillis = delayBetweenDotsMillis
+        repeatMode = RepeatMode.Reverse,
+        easing = LinearEasing
     )
-    val circleRadiusMultiplier6 = transition.chasingDotsRadiusMultiplierTransition(
+    val circleRadiusMultiplier6 = transition.fractionTransition(
         initialValue = 1f,
         targetValue = circleRatio,
         durationMillis = durationMillis / 2,
+        repeatMode = RepeatMode.Reverse,
+        easing = LinearEasing
     )
     Box(
         modifier = modifier,
@@ -155,34 +173,4 @@ fun ChasingDots(
             )
         }
     }
-}
-
-@Composable
-internal fun InfiniteTransition.chasingDotsRadiusMultiplierTransition(
-    initialValue: Float,
-    targetValue: Float,
-    durationMillis: Int,
-    offsetMillis: Int = 0,
-    easing: Easing = FastOutSlowInEasing
-): State<Float> {
-    return animateFloat(
-        initialValue = initialValue,
-        targetValue = targetValue,
-        animationSpec = infiniteRepeatable(
-            animation = keyframes {
-                this.durationMillis = durationMillis * 8
-                initialValue at 0 with easing
-                targetValue at durationMillis with easing
-                initialValue at durationMillis * 2 with easing
-                targetValue at durationMillis * 3 with easing
-                initialValue at durationMillis * 4 with easing
-                targetValue at durationMillis * 5 with easing
-                initialValue at durationMillis * 6 with easing
-                targetValue at durationMillis * 7 with easing
-                initialValue at durationMillis * 8 with easing
-            },
-            RepeatMode.Restart,
-            StartOffset(offsetMillis = offsetMillis)
-        )
-    )
 }

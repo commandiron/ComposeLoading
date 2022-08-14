@@ -7,8 +7,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -27,12 +25,12 @@ fun Pulse(
 ) {
     val transition = rememberInfiniteTransition()
 
-    val sizeMultiplier by transition.fractionTransition(
+    val sizeMultiplier = transition.fractionTransition(
         initialValue = 0f,
         targetValue = 1f,
         durationMillis = durationMillis
     )
-    val alphaMultiplier by transition.fractionTransition(
+    val alphaMultiplier = transition.fractionTransition(
         initialValue = 1f,
         targetValue = 0f,
         durationMillis = durationMillis
@@ -43,33 +41,9 @@ fun Pulse(
         contentAlignment = Alignment.Center
     ){
         Surface(
-            modifier = Modifier.size(maxSize * sizeMultiplier),
+            modifier = Modifier.size(maxSize * sizeMultiplier.value),
             shape = shape,
-            color = color.copy(alpha = alphaMultiplier)
+            color = color.copy(alpha = alphaMultiplier.value)
         ) {}
     }
-}
-
-@Composable
-internal fun InfiniteTransition.fraction3Transition(
-    initialValue: Float,
-    targetValue: Float,
-    durationMillis: Int,
-    offsetMillis: Int = 0,
-    easing: Easing = FastOutSlowInEasing
-): State<Float> {
-    return animateFloat(
-        initialValue = initialValue,
-        targetValue = targetValue,
-        animationSpec = infiniteRepeatable(
-            animation = keyframes {
-                this.durationMillis = durationMillis
-                initialValue at 0 with easing
-                targetValue at durationMillis / 2 with easing
-                initialValue at durationMillis with easing
-            },
-            RepeatMode.Restart,
-            StartOffset(offsetMillis)
-        )
-    )
 }
