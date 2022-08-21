@@ -51,31 +51,118 @@ fun ShowScreen() {
             when(currentPage){
                 0 -> { ShowGrid() }
 
-                1 -> { RotatingPlane(Modifier.background(BurntOrange).fillMaxSize()) }
+                1 -> {
+                    RotatingPlane(
+                            modifier = Modifier
+                                .background(BurntOrange)
+                                .fillMaxSize(),
+                            size = DpSize(60.dp, 60.dp
+                        )
+                    )
+                }
 
-                2 -> { ChasingDots(Modifier.background(Charcoal).fillMaxSize()) }
+                2 -> {
+                    ChasingDots(
+                        modifier = Modifier
+                            .background(Charcoal)
+                            .fillMaxSize(),
+                        size = 60.dp
+                    )
+                }
 
-                3 -> { DoubleBounce(Modifier.background(MountainMeadow).fillMaxSize()) }
+                3 -> {
+                    DoubleBounce(
+                        modifier = Modifier
+                            .background(MountainMeadow)
+                            .fillMaxSize(),
+                        size = DpSize(60.dp, 60.dp)
+                    )
+                }
 
-                4 -> { Wave(Modifier.background(StarCommandBlue).fillMaxSize()) }
+                4 -> {
+                    Wave(
+                        modifier = Modifier
+                            .background(StarCommandBlue)
+                            .fillMaxSize(),
+                        size = 60.dp
+                    )
+                }
 
-                5 -> { WanderingCubes(Modifier.background(BattleshipGrey).fillMaxSize()) }
+                5 -> {
+                    WanderingCubes(
+                        modifier = Modifier
+                            .background(BattleshipGrey)
+                            .fillMaxSize(),
+                        size = DpSize(60.dp, 60.dp)
+                    )
+                }
 
-                6 -> { Pulse(Modifier.background(MaximumYellowRed).fillMaxSize()) }
+                6 -> {
+                    Pulse(
+                        modifier = Modifier
+                            .background(MaximumYellowRed)
+                            .fillMaxSize(),
+                        size = DpSize(60.dp, 60.dp)
+                    )
+                }
 
-                7 -> { ChasingTwoDots(Modifier.background(BurntOrange).fillMaxSize()) }
+                7 -> {
+                    ChasingTwoDots(
+                        modifier = Modifier
+                            .background(BurntOrange)
+                            .fillMaxSize(),
+                        size = DpSize(60.dp, 60.dp)
+                    )
+                }
 
-                8 -> { ThreeBounce(Modifier.background(GOGreen).fillMaxSize()) }
+                8 -> {
+                    ThreeBounce(
+                        modifier = Modifier
+                            .background(GOGreen)
+                            .fillMaxSize(),
+                        size = DpSize(60.dp, 60.dp)
+                    )
+                }
 
-                9 -> { Circle(Modifier.background(BurntOrange).fillMaxSize()) }
+                9 -> {
+                    Circle(
+                        modifier = Modifier
+                            .background(BurntOrange)
+                            .fillMaxSize(),
+                        size = 60.dp
+                    )
+                }
 
-                10 -> { CubeGrid(Modifier.background(Charcoal).fillMaxSize()) }
+                10 -> {
+                    CubeGrid(
+                        modifier = Modifier
+                            .background(Charcoal)
+                            .fillMaxSize(),
+                        size = DpSize(60.dp, 60.dp)
+                    )
+                }
 
-                11 -> { FadingCircle(Modifier.background(MountainMeadow).fillMaxSize()) }
+                11 -> {
+                    FadingCircle(
+                        modifier = Modifier
+                            .background(MountainMeadow)
+                            .fillMaxSize(),
+                        size = 60.dp
+                    )
+                }
 
-                12 -> { FoldingCube(Modifier.background(StarCommandBlue).fillMaxSize()) }
+                12 -> {
+                    FoldingCube(
+                        modifier = Modifier
+                            .background(StarCommandBlue)
+                            .fillMaxSize(),
+                        size = DpSize(60.dp, 60.dp)
+                    )
+                }
 
-                13 -> { InstaSpinner(Modifier.background(BattleshipGrey).fillMaxSize()) }
+                13 -> {
+                    InstaSpinner(Modifier.background(BattleshipGrey).fillMaxSize())
+                }
 
                 14 -> {
                     LoadingBar(
@@ -87,7 +174,9 @@ fun ShowScreen() {
                     )
                 }
 
-                15 -> { LoadingDots(Modifier.background(GOGreen).fillMaxSize(),"Loading") }
+                15 -> {
+                    LoadingDots(Modifier.background(GOGreen).fillMaxSize(),"Loading")
+                }
             }
         }
     }
