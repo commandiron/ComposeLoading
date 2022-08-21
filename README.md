@@ -7,7 +7,7 @@ Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spin
 
 |Preview|
 |-------|
-|<img src="https://user-images.githubusercontent.com/50905347/185809978-83dda286-b898-4653-975f-4b44843767f6.gif" width="230" height="230">|
+|<img src="https://user-images.githubusercontent.com/50905347/185809978-83dda286-b898-4653-975f-4b44843767f6.gif" width="232" height="232">|
 
 ## Setup
 1. Open the file `settings.gradle` (it looks like that)
