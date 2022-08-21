@@ -29,7 +29,7 @@ import com.commandiron.compose_loading.transition.fractionTransition
 @Composable
 fun CubeGrid(
     modifier: Modifier = Modifier,
-    size: DpSize = DpSize(24.dp, 24.dp),
+    size: DpSize = DpSize(40.dp, 40.dp),
     durationMillis: Int = 1000,
     color: Color = MaterialTheme.colorScheme.primary,
 ) {
@@ -166,90 +166,4 @@ fun CubeGrid(
             }
         }
     }
-//    Box(
-//        modifier = modifier,
-//        contentAlignment = Alignment.Center
-//    ){
-//        Canvas(modifier = Modifier.size(size)){
-//            val width = this.size.width
-//            val height = this.size.height
-//
-//            val rectSize = Size(
-//                width = width / 3,
-//                height = height / 3
-//            )
-//
-//            val offsetRect = (center + Offset(- width / 2,  - height / 2))
-//            drawRect(
-//                color = color,
-//                size = rectSize,
-//                topLeft = offsetRect
-//            )
-//            drawRect(
-//                color = color,
-//                size = rectSize,
-//                topLeft = offsetRect + Offset(rectSize.width, 0f)
-//            )
-//            drawRect(
-//                color = color,
-//                size = rectSize,
-//                topLeft = offsetRect + Offset(rectSize.width * 2, 0f)
-//            )
-//            drawRect(
-//                color = color,
-//                size = rectSize,
-//                topLeft = offsetRect + Offset(0f, rectSize.height)
-//            )
-//            drawRect(
-//                color = color,
-//                size = rectSize,
-//                topLeft = offsetRect + Offset(rectSize.width, rectSize.height)
-//            )
-//            drawRect(
-//                color = color,
-//                size = rectSize,
-//                topLeft = offsetRect + Offset(rectSize.width * 2, rectSize.height)
-//            )
-//            drawRect(
-//                color = color,
-//                size = rectSize,
-//                topLeft = offsetRect + Offset(0f, rectSize.height * 2)
-//            )
-//            drawRect(
-//                color = color,
-//                size = rectSize,
-//                topLeft = offsetRect + Offset(rectSize.width, rectSize.height * 2)
-//            )
-//            drawRect(
-//                color = color,
-//                size = rectSize,
-//                topLeft = offsetRect + Offset(rectSize.width * 2, rectSize.height * 2)
-//            )
-//            drawLine(
-//                color = color,
-//                start = offsetRect + Offset(rectSize.width, 0f),
-//                end = offsetRect + Offset(rectSize.width, rectSize.height * 3),
-//                strokeWidth = rectSize.width / 10
-//            )
-//            drawLine(
-//                color = color,
-//                start = offsetRect + Offset(rectSize.width * 2, 0f),
-//                end = offsetRect + Offset(rectSize.width * 2, rectSize.height * 3),
-//                strokeWidth = rectSize.width / 10
-//            )
-//
-//            drawLine(
-//                color = color,
-//                start = offsetRect + Offset( 0f, rectSize.height),
-//                end = offsetRect + Offset(rectSize.width * 3, rectSize.height),
-//                strokeWidth = rectSize.width / 10
-//            )
-//            drawLine(
-//                color = color,
-//                start = offsetRect + Offset( 0f, rectSize.height * 2),
-//                end = offsetRect + Offset(rectSize.width * 3, rectSize.height * 2),
-//                strokeWidth = rectSize.width / 10
-//            )
-//        }
-//    }
 }

@@ -22,7 +22,7 @@ import com.commandiron.compose_loading.transition.fractionTransition
 fun WanderingCubes(
     modifier: Modifier = Modifier,
     durationMillis: Int = 1800,
-    size: DpSize = DpSize(30.dp, 30.dp),
+    size: DpSize = DpSize(40.dp, 40.dp),
     color: Color = MaterialTheme.colorScheme.primary,
 ) {
     val transition = rememberInfiniteTransition()
@@ -68,52 +68,47 @@ fun WanderingCubes(
         durationMillisPerFraction = durationPerFraction
     )
 
-    Box(
-        modifier = modifier,
-        contentAlignment = Alignment.Center
-    ){
-        Canvas(modifier = Modifier.size(size)){
-            val width = this.size.width
-            val height = this.size.height
+    Canvas(modifier = modifier.size(size)){
+        val width = this.size.width
+        val height = this.size.height
 
-            val rectWidth = width / 6
-            val rectHeight = height / 6
+        val rectWidth = width / 6
+        val rectHeight = height / 6
 
-            val rectSize = Size(
-                width = rectWidth * rectWidthMultiplier.value,
-                height = rectHeight * rectHeightMultiplier.value
+        val rectSize = Size(
+            width = rectWidth * rectWidthMultiplier.value,
+            height = rectHeight * rectHeightMultiplier.value
+        )
+
+        val effectiveWidth = width - rectSize.width
+        val effectiveHeight = height - rectSize.height
+
+        val x1 = x1Multiplier.value * effectiveWidth
+        val y1 = y1Multiplier.value * effectiveHeight
+        rotate(
+            degrees = rectRotation.value,
+            pivot = Offset(x1, y1) + Offset(rectSize.width / 2, rectSize.height / 2)
+        ){
+            drawRect(
+                color = color,
+                size = rectSize,
+                topLeft = Offset(x1, y1)
             )
-
-            val effectiveWidth = width - rectSize.width
-            val effectiveHeight = height - rectSize.height
-
-            val x1 = x1Multiplier.value * effectiveWidth
-            val y1 = y1Multiplier.value * effectiveHeight
-            rotate(
-                degrees = rectRotation.value,
-                pivot = Offset(x1, y1) + Offset(rectSize.width / 2, rectSize.height / 2)
-            ){
-                drawRect(
-                    color = color,
-                    size = rectSize,
-                    topLeft = Offset(x1, y1)
-                )
-            }
-
-            val x2 = x2Multiplier.value * effectiveWidth
-            val y2 = y2Multiplier.value * effectiveHeight
-            rotate(
-                degrees = rectRotation.value,
-                pivot = Offset(x2, y2) + Offset(rectSize.width / 2, rectSize.height / 2)
-            ){
-                drawRect(
-                    color = color,
-                    size = rectSize,
-                    topLeft = Offset(x2,y2)
-                )
-            }
-
         }
+
+        val x2 = x2Multiplier.value * effectiveWidth
+        val y2 = y2Multiplier.value * effectiveHeight
+        rotate(
+            degrees = rectRotation.value,
+            pivot = Offset(x2, y2) + Offset(rectSize.width / 2, rectSize.height / 2)
+        ){
+            drawRect(
+                color = color,
+                size = rectSize,
+                topLeft = Offset(x2,y2)
+            )
+        }
+
     }
 }
 

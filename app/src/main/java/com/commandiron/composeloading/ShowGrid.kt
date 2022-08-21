@@ -22,91 +22,132 @@ fun ShowGrid(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row {
-            RotatingPlane(
+            Box(
                 modifier = Modifier
                     .size(gridSize)
-                    .background(BurntOrange)
-            )
-            ChasingDots(
+                    .background(BurntOrange),
+                contentAlignment = Alignment.Center
+            ) {
+                RotatingPlane()
+            }
+            Box(
                 modifier = Modifier
                     .size(gridSize)
-                    .background(Charcoal)
-            )
-            DoubleBounce(
+                    .background(Charcoal),
+                contentAlignment = Alignment.Center
+            ) {
+                ChasingDots()
+            }
+            Box(
                 modifier = Modifier
                     .size(gridSize)
-                    .background(MountainMeadow)
-            )
-            Wave(
+                    .background(MountainMeadow),
+                contentAlignment = Alignment.Center
+            ) {
+                DoubleBounce()
+            }
+            Box(
                 modifier = Modifier
                     .size(gridSize)
-                    .background(StarCommandBlue)
-            )
+                    .background(StarCommandBlue),
+                contentAlignment = Alignment.Center
+            ) {
+                Wave()
+            }
         }
         Row {
-            WanderingCubes(
+            Box(
                 modifier = Modifier
                     .size(gridSize)
-                    .background(BattleshipGrey)
-            )
-            Pulse(
+                    .background(BattleshipGrey),
+                contentAlignment = Alignment.Center
+            ) {
+                WanderingCubes()
+            }
+            Box(
                 modifier = Modifier
                     .size(gridSize)
-                    .background(MaximumYellowRed)
-            )
-            ChasingTwoDots(
-                modifier = Modifier
-                    .size(gridSize)
-                    .background(BurntOrange)
-            )
-            ThreeBounce(
-                modifier = Modifier
-                    .size(gridSize)
-                    .background(GOGreen)
-            )
-        }
-        Row {
-            Circle(
-                modifier = Modifier
-                    .size(gridSize)
-                    .background(BurntOrange)
-            )
-            CubeGrid(
-                modifier = Modifier
-                    .size(gridSize)
-                    .background(Charcoal)
-            )
-            FadingCircle(
-                modifier = Modifier
-                    .size(gridSize)
-                    .background(MountainMeadow)
-            )
-            FoldingCube(
-                modifier = Modifier
-                    .size(gridSize)
-                    .background(StarCommandBlue)
-            )
-        }
-        Row {
-            InstaSpinner(
-                modifier = Modifier
-                    .size(gridSize)
-                    .background(BattleshipGrey)
-            )
-            LoadingBar(
-                modifier = Modifier
-                    .size(gridSize * 2, gridSize)
                     .background(MaximumYellowRed),
-                width = gridSize,
-                fakeMillis = 10000,
-                fillColor = Bluetiful
-            )
-            LoadingDots(
+                contentAlignment = Alignment.Center
+            ) {
+                Pulse()
+            }
+            Box(
+                modifier = Modifier
+                    .size(gridSize)
+                    .background(BurntOrange),
+                contentAlignment = Alignment.Center
+            ) {
+                ChasingTwoDots()
+            }
+            Box(
                 modifier = Modifier
                     .size(gridSize)
                     .background(GOGreen),
-                style = MaterialTheme.typography.titleLarge
-            )
+                contentAlignment = Alignment.Center
+            ) {
+                ThreeBounce()
+            }
+        }
+        Row {
+            Box(
+                modifier = Modifier
+                    .size(gridSize)
+                    .background(BurntOrange),
+                contentAlignment = Alignment.Center
+            ) {
+                Circle()
+            }
+            Box(
+                modifier = Modifier
+                    .size(gridSize)
+                    .background(Charcoal),
+                contentAlignment = Alignment.Center
+            ) {
+                CubeGrid()
+            }
+            Box(
+                modifier = Modifier
+                    .size(gridSize)
+                    .background(MountainMeadow),
+                contentAlignment = Alignment.Center
+            ) {
+                FadingCircle()
+            }
+            Box(
+                modifier = Modifier
+                    .size(gridSize)
+                    .background(StarCommandBlue),
+                contentAlignment = Alignment.Center
+            ) {
+                FoldingCube()
+            }
+        }
+        Row {
+            Box(
+                modifier = Modifier
+                    .size(gridSize)
+                    .background(BattleshipGrey),
+                contentAlignment = Alignment.Center
+            ) {
+                InstaSpinner()
+            }
+            Box(
+                modifier = Modifier
+                    .size(gridSize * 2, gridSize)
+                    .background(MaximumYellowRed),
+                contentAlignment = Alignment.Center
+            ) {
+                LoadingBar(width = gridSize, fakeMillis = 10000, fillColor = Bluetiful)
+            }
+            Box(
+                modifier = Modifier
+                    .size(gridSize)
+                    .background(GOGreen),
+                contentAlignment = Alignment.Center
+            ) {
+                LoadingDots()
+            }
         }
     }
 }

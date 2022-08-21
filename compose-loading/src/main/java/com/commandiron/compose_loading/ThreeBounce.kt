@@ -20,7 +20,7 @@ fun ThreeBounce(
     modifier: Modifier = Modifier,
     durationMillis: Int = 1400,
     delayBetweenDotsMillis: Int = 160,
-    size: DpSize = DpSize(24.dp, 24.dp),
+    size: DpSize = DpSize(40.dp, 40.dp),
     color: Color = MaterialTheme.colorScheme.primary,
     shape: Shape = CircleShape
 ) {
@@ -50,34 +50,33 @@ fun ThreeBounce(
         repeatMode = RepeatMode.Reverse
     )
 
-    Box(
-        modifier = modifier,
-        contentAlignment = Alignment.Center
-    ){
-        Row() {
-            Box(modifier = Modifier.size(size / 3), contentAlignment = Alignment.Center) {
-                Surface(
-                    modifier = Modifier.size(size / 3 * sizeMultiplier1.value),
-                    shape = shape,
-                    color = color
-                ) {}
-            }
-            Spacer(modifier = Modifier.width(size.width / 3 / 4))
-            Box(modifier = Modifier.size(size / 3), contentAlignment = Alignment.Center) {
-                Surface(
-                    modifier = Modifier.size(size / 3 * sizeMultiplier2.value),
-                    shape = shape,
-                    color = color
-                ) {}
-            }
-            Spacer(modifier = Modifier.width(size.width / 3 / 4))
-            Box(modifier = Modifier.size(size / 3), contentAlignment = Alignment.Center) {
-                Surface(
-                    modifier = Modifier.size(size / 3 * sizeMultiplier3.value),
-                    shape = shape,
-                    color = color
-                ) {}
-            }
+    Row(
+        modifier = modifier.size(size),
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Box(modifier = Modifier.size(size * 3 / 11), contentAlignment = Alignment.Center) {
+            Surface(
+                modifier = Modifier.size(size * 3 / 11 * sizeMultiplier1.value),
+                shape = shape,
+                color = color
+            ) {}
+        }
+        Spacer(modifier = Modifier.width(size.width / 1 / 11))
+        Box(modifier = Modifier.size(size * 3 / 11), contentAlignment = Alignment.Center) {
+            Surface(
+                modifier = Modifier.size(size * 3 / 11 * sizeMultiplier2.value),
+                shape = shape,
+                color = color
+            ) {}
+        }
+        Spacer(modifier = Modifier.width(size.width / 1 / 11))
+        Box(modifier = Modifier.size(size * 3 / 11), contentAlignment = Alignment.Center) {
+            Surface(
+                modifier = Modifier.size(size * 3 / 11 * sizeMultiplier3.value),
+                shape = shape,
+                color = color
+            ) {}
         }
     }
 }

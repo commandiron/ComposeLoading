@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun FoldingCube(
     modifier: Modifier = Modifier,
-    size: DpSize = DpSize(24.dp, 24.dp),
+    size: DpSize = DpSize(40.dp, 40.dp),
     durationMillisPerFraction: Int = 400,
     color: Color = MaterialTheme.colorScheme.primary
 ) {

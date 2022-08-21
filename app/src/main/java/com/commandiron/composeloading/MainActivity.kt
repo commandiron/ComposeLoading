@@ -6,9 +6,11 @@ import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
@@ -52,130 +54,163 @@ fun ShowScreen() {
                 0 -> { ShowGrid() }
 
                 1 -> {
-                    RotatingPlane(
-                            modifier = Modifier
-                                .background(BurntOrange)
-                                .fillMaxSize(),
-                            size = DpSize(60.dp, 60.dp
-                        )
-                    )
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(BurntOrange),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        RotatingPlane()
+                    }
                 }
 
                 2 -> {
-                    ChasingDots(
+                    Box(
                         modifier = Modifier
-                            .background(Charcoal)
-                            .fillMaxSize(),
-                        size = 60.dp
-                    )
+                            .fillMaxSize()
+                            .background(Charcoal),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        ChasingDots()
+                    }
                 }
 
                 3 -> {
-                    DoubleBounce(
+                    Box(
                         modifier = Modifier
-                            .background(MountainMeadow)
-                            .fillMaxSize(),
-                        size = DpSize(60.dp, 60.dp)
-                    )
+                            .fillMaxSize()
+                            .background(MountainMeadow),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        DoubleBounce()
+                    }
                 }
 
                 4 -> {
-                    Wave(
+                    Box(
                         modifier = Modifier
-                            .background(StarCommandBlue)
-                            .fillMaxSize(),
-                        size = 60.dp
-                    )
+                            .fillMaxSize()
+                            .background(StarCommandBlue),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Wave()
+                    }
                 }
 
                 5 -> {
-                    WanderingCubes(
+                    Box(
                         modifier = Modifier
-                            .background(BattleshipGrey)
-                            .fillMaxSize(),
-                        size = DpSize(60.dp, 60.dp)
-                    )
+                            .fillMaxSize()
+                            .background(BattleshipGrey),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        WanderingCubes()
+                    }
                 }
 
                 6 -> {
-                    Pulse(
+                    Box(
                         modifier = Modifier
-                            .background(MaximumYellowRed)
-                            .fillMaxSize(),
-                        size = DpSize(60.dp, 60.dp)
-                    )
+                            .fillMaxSize()
+                            .background(MaximumYellowRed),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Pulse()
+                    }
                 }
 
                 7 -> {
-                    ChasingTwoDots(
+                    Box(
                         modifier = Modifier
-                            .background(BurntOrange)
-                            .fillMaxSize(),
-                        size = DpSize(60.dp, 60.dp)
-                    )
+                            .fillMaxSize()
+                            .background(BurntOrange),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        ChasingTwoDots()
+                    }
                 }
 
                 8 -> {
-                    ThreeBounce(
+                    Box(
                         modifier = Modifier
-                            .background(GOGreen)
-                            .fillMaxSize(),
-                        size = DpSize(60.dp, 60.dp)
-                    )
+                            .fillMaxSize()
+                            .background(GOGreen),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        ThreeBounce()
+                    }
                 }
 
                 9 -> {
-                    Circle(
+                    Box(
                         modifier = Modifier
-                            .background(BurntOrange)
-                            .fillMaxSize(),
-                        size = 60.dp
-                    )
+                            .fillMaxSize()
+                            .background(BurntOrange),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Circle()
+                    }
                 }
 
                 10 -> {
-                    CubeGrid(
+                    Box(
                         modifier = Modifier
-                            .background(Charcoal)
-                            .fillMaxSize(),
-                        size = DpSize(60.dp, 60.dp)
-                    )
+                            .fillMaxSize()
+                            .background(Charcoal),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        CubeGrid()
+                    }
                 }
 
                 11 -> {
-                    FadingCircle(
+                    Box(
                         modifier = Modifier
-                            .background(MountainMeadow)
-                            .fillMaxSize(),
-                        size = 60.dp
-                    )
+                            .fillMaxSize()
+                            .background(MountainMeadow),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        FadingCircle()
+                    }
                 }
 
                 12 -> {
-                    FoldingCube(
+                    Box(
                         modifier = Modifier
-                            .background(StarCommandBlue)
-                            .fillMaxSize(),
-                        size = DpSize(60.dp, 60.dp)
-                    )
+                            .fillMaxSize()
+                            .background(StarCommandBlue),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        FoldingCube()
+                    }
                 }
 
                 13 -> {
-                    InstaSpinner(Modifier.background(BattleshipGrey).fillMaxSize())
+                    InstaSpinner(Modifier
+                        .background(BattleshipGrey)
+                        .fillMaxSize())
                 }
 
                 14 -> {
-                    LoadingBar(
+                    Box(
                         modifier = Modifier
-                            .background(MaximumYellowRed)
-                            .fillMaxSize(),
-                        fakeMillis = 10000,
-                        fillColor = Bluetiful
-                    )
+                            .fillMaxSize()
+                            .background(MaximumYellowRed),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        LoadingBar(fakeMillis = 10000, fillColor = Bluetiful)
+                    }
                 }
 
                 15 -> {
-                    LoadingDots(Modifier.background(GOGreen).fillMaxSize(),"Loading")
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(GOGreen),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        LoadingDots(text = "Loading")
+                    }
                 }
             }
         }

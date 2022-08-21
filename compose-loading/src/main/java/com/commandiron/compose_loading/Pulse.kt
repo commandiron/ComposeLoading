@@ -20,7 +20,7 @@ fun Pulse(
     modifier: Modifier = Modifier,
     durationMillis: Int = 1000,
     delayMillis: Int = 0,
-    size: DpSize = DpSize(30.dp, 30.dp),
+    size: DpSize = DpSize(40.dp, 40.dp),
     color: Color = MaterialTheme.colorScheme.primary,
     shape: Shape = CircleShape,
 ) {

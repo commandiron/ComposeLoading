@@ -1,9 +1,9 @@
 package com.commandiron.compose_loading
 
 import androidx.compose.animation.core.*
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Shapes
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,7 +21,7 @@ fun Wave(
     modifier: Modifier = Modifier,
     durationMillis: Int = 1200,
     delayMillis: Int = 400,
-    size: Dp = 24.dp,
+    size: Dp = 40.dp,
     color: Color = MaterialTheme.colorScheme.primary,
     shape: Shape = RectangleShape,
 ) {
@@ -72,48 +72,50 @@ fun Wave(
         easing = EaseInOut
     )
     Row(
-        modifier = modifier,
+        modifier = modifier.size(size),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center
     ) {
+        Spacer(modifier = Modifier.width(size * 5 / 75))
         Surface(
             modifier = Modifier
-                .size(size / 6)
+                .size(size * 10 / 75)
                 .aspectRatio(aspectRatio1.value),
             color = color,
             shape = shape
         ) {}
-        Spacer(modifier = Modifier.width(size / 12))
+        Spacer(modifier = Modifier.width(size * 5 / 75))
         Surface(
             modifier = Modifier
-                .size(size / 6)
+                .size(size * 10 / 75)
                 .aspectRatio(aspectRatio2.value),
             color = color,
             shape = shape
         ) {}
-        Spacer(modifier = Modifier.width(size/ 12))
+        Spacer(modifier = Modifier.width(size * 5 / 75))
         Surface(
             modifier = Modifier
-                .size(size / 6)
+                .size(size * 10 / 75)
                 .aspectRatio(aspectRatio3.value),
             color = color,
             shape = shape
         ) {}
-        Spacer(modifier = Modifier.width(size / 12))
+        Spacer(modifier = Modifier.width(size * 5 / 75))
         Surface(
             modifier = Modifier
-                .size(size / 6)
+                .size(size * 10 / 75)
                 .aspectRatio(aspectRatio4.value),
             color = color,
             shape = shape
         ) {}
-        Spacer(modifier = Modifier.width(size / 12))
+        Spacer(modifier = Modifier.width(size * 5 / 75))
         Surface(
             modifier = Modifier
-                .size(size / 6)
+                .size(size * 10 / 75)
                 .aspectRatio(aspectRatio5.value),
             color = color,
             shape = shape
         ) {}
+        Spacer(modifier = Modifier.width(size * 5 / 75))
     }
 }

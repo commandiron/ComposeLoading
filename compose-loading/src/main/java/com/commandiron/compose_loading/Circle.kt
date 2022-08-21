@@ -20,7 +20,7 @@ import kotlin.math.sin
 @Composable
 fun Circle(
     modifier: Modifier = Modifier,
-    size: Dp = 24.dp,
+    size: Dp = 40.dp,
     durationMillis: Int = 1200,
     color: Color = MaterialTheme.colorScheme.primary,
     circleSizeRatio: Float = 1.0f
@@ -126,49 +126,44 @@ fun Circle(
         easing = EaseInOut
     )
 
-    Box(
-        modifier = modifier,
-        contentAlignment = Alignment.Center
-    ){
-        Canvas(modifier = Modifier.size(size)){
-            val pathRadius = (this.size.height / 2)
-            val radius1 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier1.value
-            val radius2 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier2.value
-            val radius3 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier3.value
-            val radius4 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier4.value
-            val radius5 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier5.value
-            val radius6 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier6.value
-            val radius7 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier7.value
-            val radius8 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier8.value
-            val radius9 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier9.value
-            val radius10 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier10.value
-            val radius11 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier11.value
-            val radius12 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier12.value
+    Canvas(modifier = modifier.size(size)){
+        val pathRadius = (this.size.height / 2)
+        val radius1 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier1.value
+        val radius2 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier2.value
+        val radius3 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier3.value
+        val radius4 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier4.value
+        val radius5 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier5.value
+        val radius6 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier6.value
+        val radius7 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier7.value
+        val radius8 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier8.value
+        val radius9 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier9.value
+        val radius10 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier10.value
+        val radius11 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier11.value
+        val radius12 = this.size.height / 12 * circleSizeRatio * circleSizeMultiplier12.value
 
-            for(i in 0 until 12){
-                val angle = i / 12.toDouble() * 360.0
-                val offsetX = -(pathRadius * sin(Math.toRadians(angle))).toFloat() + pathRadius
-                val offsetY = (pathRadius * cos(Math.toRadians(angle))).toFloat() + pathRadius
-                drawCircle(
-                    color = color,
-                    radius = when(i){
-                        0 -> radius1
-                        1 -> radius2
-                        2 -> radius3
-                        3 -> radius4
-                        4 -> radius5
-                        5 -> radius6
-                        6 -> radius7
-                        7 -> radius8
-                        8 -> radius9
-                        9 -> radius10
-                        10 -> radius11
-                        11 -> radius12
-                        else -> radius1
-                    },
-                    center = Offset(offsetX,  offsetY)
-                )
-            }
+        for(i in 0 until 12){
+            val angle = i / 12.toDouble() * 360.0
+            val offsetX = -(pathRadius * sin(Math.toRadians(angle))).toFloat() + pathRadius
+            val offsetY = (pathRadius * cos(Math.toRadians(angle))).toFloat() + pathRadius
+            drawCircle(
+                color = color,
+                radius = when(i){
+                    0 -> radius1
+                    1 -> radius2
+                    2 -> radius3
+                    3 -> radius4
+                    4 -> radius5
+                    5 -> radius6
+                    6 -> radius7
+                    7 -> radius8
+                    8 -> radius9
+                    9 -> radius10
+                    10 -> radius11
+                    11 -> radius12
+                    else -> radius1
+                },
+                center = Offset(offsetX,  offsetY)
+            )
         }
     }
 }

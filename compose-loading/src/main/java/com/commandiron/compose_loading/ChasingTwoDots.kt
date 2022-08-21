@@ -2,6 +2,7 @@ package com.commandiron.compose_loading
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
@@ -23,7 +24,7 @@ fun ChasingTwoDots(
     modifier: Modifier = Modifier,
     durationMillis: Int = 2000,
     durationBetweenDotsMillis: Int = 400,
-    size: DpSize = DpSize(24.dp, 24.dp),
+    size: DpSize = DpSize(40.dp, 40.dp),
     color: Color = MaterialTheme.colorScheme.primary,
 ) {
     val transition = rememberInfiniteTransition()
@@ -60,34 +61,29 @@ fun ChasingTwoDots(
         easing = EaseInOut
     )
 
-    Box(
-        modifier = modifier,
-        contentAlignment = Alignment.Center
-    ){
-        Canvas(modifier = Modifier.size(size)){
+    Canvas(modifier = modifier.size(size)){
 
-            val radius = (this.size.height / 2)
-            val radiusCommon = this.size.height / 3
+        val radius = (this.size.height / 2)
+        val radiusCommon = this.size.height / 3
 
-            val radius1 = circleRadiusMultiplier1.value * radiusCommon
-            val angle1 = (dotPathMultiplier1.value * 360.0)
-            val offsetX1 = -(radius * sin(Math.toRadians(angle1))).toFloat() + (this.size.width / 2)
-            val offsetY1 = (radius * cos(Math.toRadians(angle1))).toFloat() + (this.size.height / 2)
-            drawCircle(
-                color = color,
-                radius = radius1,
-                center = Offset(offsetX1,  offsetY1)
-            )
+        val radius1 = circleRadiusMultiplier1.value * radiusCommon
+        val angle1 = (dotPathMultiplier1.value * 360.0)
+        val offsetX1 = -(radius * sin(Math.toRadians(angle1))).toFloat() + (this.size.width / 2)
+        val offsetY1 = (radius * cos(Math.toRadians(angle1))).toFloat() + (this.size.height / 2)
+        drawCircle(
+            color = color,
+            radius = radius1,
+            center = Offset(offsetX1,  offsetY1)
+        )
 
-            val radius2 = circleRadiusMultiplier2.value * radiusCommon
-            val angle2 = (dotPathMultiplier2.value * 360.0)
-            val offsetX2 = -(radius * sin(Math.toRadians(angle2))).toFloat() + (this.size.width / 2)
-            val offsetY2 = (radius * cos(Math.toRadians(angle2))).toFloat() + (this.size.height / 2)
-            drawCircle(
-                color = color,
-                radius = radius2,
-                center = Offset(offsetX2,  offsetY2)
-            )
-        }
+        val radius2 = circleRadiusMultiplier2.value * radiusCommon
+        val angle2 = (dotPathMultiplier2.value * 360.0)
+        val offsetX2 = -(radius * sin(Math.toRadians(angle2))).toFloat() + (this.size.width / 2)
+        val offsetY2 = (radius * cos(Math.toRadians(angle2))).toFloat() + (this.size.height / 2)
+        drawCircle(
+            color = color,
+            radius = radius2,
+            center = Offset(offsetX2,  offsetY2)
+        )
     }
 }
