@@ -23,7 +23,7 @@ fun ChasingDots(
     modifier: Modifier = Modifier,
     durationMillis: Int = 2000,
     delayBetweenDotsMillis: Int = 50,
-    size: Dp = 30.dp,
+    size: Dp = 24.dp,
     color: Color = MaterialTheme.colorScheme.primary,
     circleRatio: Float = 0.25f
 ) {

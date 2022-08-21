@@ -20,7 +20,7 @@ fun ThreeBounce(
     modifier: Modifier = Modifier,
     durationMillis: Int = 1400,
     delayBetweenDotsMillis: Int = 160,
-    size: DpSize = DpSize(30.dp, 30.dp),
+    size: DpSize = DpSize(24.dp, 24.dp),
     color: Color = MaterialTheme.colorScheme.primary,
     shape: Shape = CircleShape
 ) {

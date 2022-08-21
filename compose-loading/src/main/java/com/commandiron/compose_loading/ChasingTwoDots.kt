@@ -23,7 +23,7 @@ fun ChasingTwoDots(
     modifier: Modifier = Modifier,
     durationMillis: Int = 2000,
     durationBetweenDotsMillis: Int = 400,
-    size: DpSize = DpSize(30.dp, 30.dp),
+    size: DpSize = DpSize(24.dp, 24.dp),
     color: Color = MaterialTheme.colorScheme.primary,
 ) {
     val transition = rememberInfiniteTransition()

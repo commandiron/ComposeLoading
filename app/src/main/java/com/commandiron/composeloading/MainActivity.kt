@@ -7,8 +7,11 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.DpSize
+import androidx.compose.ui.unit.dp
 import com.commandiron.compose_loading.*
 import com.commandiron.composeloading.ui.theme.*
 import com.google.accompanist.pager.HorizontalPager
@@ -56,7 +59,7 @@ fun ShowScreen() {
 
                 4 -> { Wave(Modifier.background(StarCommandBlue).fillMaxSize()) }
 
-                5 -> { WanderingCubes( Modifier.background(BattleshipGrey).fillMaxSize()) }
+                5 -> { WanderingCubes(Modifier.background(BattleshipGrey).fillMaxSize()) }
 
                 6 -> { Pulse(Modifier.background(MaximumYellowRed).fillMaxSize()) }
 
@@ -74,7 +77,15 @@ fun ShowScreen() {
 
                 13 -> { InstaSpinner(Modifier.background(BattleshipGrey).fillMaxSize()) }
 
-                14 -> { LoadingBar(Modifier.background(MaximumYellowRed).fillMaxSize(), fakeMillis = 10000, fillColor = Bluetiful) }
+                14 -> {
+                    LoadingBar(
+                        modifier = Modifier
+                            .background(MaximumYellowRed)
+                            .fillMaxSize(),
+                        fakeMillis = 10000,
+                        fillColor = Bluetiful
+                    )
+                }
 
                 15 -> { LoadingDots(Modifier.background(GOGreen).fillMaxSize(),"Loading") }
             }

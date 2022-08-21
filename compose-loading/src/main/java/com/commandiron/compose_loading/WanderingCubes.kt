@@ -12,9 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import com.commandiron.compose_loading.transition.EaseInOut
+import com.commandiron.compose_loading.transition.fractionTransition
 
 @Composable
 fun WanderingCubes(
@@ -60,6 +62,12 @@ fun WanderingCubes(
         durationMillisPerFraction = durationPerFraction / 2
     )
 
+    val rectRotation = transition.wanderingCubesRotateTransition(
+        initialValue = 0f,
+        targetValue = -90f,
+        durationMillisPerFraction = durationPerFraction
+    )
+
     Box(
         modifier = modifier,
         contentAlignment = Alignment.Center
@@ -81,19 +89,30 @@ fun WanderingCubes(
 
             val x1 = x1Multiplier.value * effectiveWidth
             val y1 = y1Multiplier.value * effectiveHeight
-            drawRect(
-                color = color,
-                size = rectSize,
-                topLeft = Offset(x1, y1)
-            )
+            rotate(
+                degrees = rectRotation.value,
+                pivot = Offset(x1, y1) + Offset(rectSize.width / 2, rectSize.height / 2)
+            ){
+                drawRect(
+                    color = color,
+                    size = rectSize,
+                    topLeft = Offset(x1, y1)
+                )
+            }
 
             val x2 = x2Multiplier.value * effectiveWidth
             val y2 = y2Multiplier.value * effectiveHeight
-            drawRect(
-                color = color,
-                size = rectSize,
-                topLeft = Offset(x2,y2)
-            )
+            rotate(
+                degrees = rectRotation.value,
+                pivot = Offset(x2, y2) + Offset(rectSize.width / 2, rectSize.height / 2)
+            ){
+                drawRect(
+                    color = color,
+                    size = rectSize,
+                    topLeft = Offset(x2,y2)
+                )
+            }
+
         }
     }
 }
@@ -117,6 +136,34 @@ internal fun InfiniteTransition.wanderingCubesTransition(
                 targetValue at durationMillisPerFraction * 2 with easing
                 initialValue at durationMillisPerFraction * 3 with easing
                 initialValue at durationMillisPerFraction * 4 with easing
+            },
+            RepeatMode.Restart,
+            StartOffset(offsetMillis)
+        )
+    )
+}
+
+@Composable
+internal fun InfiniteTransition.wanderingCubesRotateTransition(
+    initialValue: Float,
+    targetValue: Float,
+    durationMillisPerFraction: Int,
+    delayMillis: Int = 0,
+    offsetMillis: Int = 0,
+    easing: Easing = EaseInOut
+): State<Float> {
+    return animateFloat(
+        initialValue = initialValue,
+        targetValue = targetValue,
+        animationSpec = infiniteRepeatable(
+            animation = keyframes {
+                this.durationMillis = durationMillisPerFraction * 4
+                this.delayMillis = delayMillis
+                initialValue at 0 with easing
+                targetValue at durationMillisPerFraction with easing
+                targetValue * 2 at durationMillisPerFraction * 2 with easing
+                targetValue * 3 at durationMillisPerFraction * 3 with easing
+                targetValue * 4 at durationMillisPerFraction * 4 with easing
             },
             RepeatMode.Restart,
             StartOffset(offsetMillis)
