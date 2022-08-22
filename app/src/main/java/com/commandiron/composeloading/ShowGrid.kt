@@ -2,11 +2,11 @@ package com.commandiron.composeloading
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import com.commandiron.compose_loading.*
 import com.commandiron.composeloading.ui.theme.*
@@ -28,7 +28,7 @@ fun ShowGrid(
                     .background(BurntOrange),
                 contentAlignment = Alignment.Center
             ) {
-                RotatingPlane()
+                RotatingPlane(size = DpSize(gridSize / 2, gridSize / 2))
             }
             Box(
                 modifier = Modifier
@@ -36,7 +36,7 @@ fun ShowGrid(
                     .background(Charcoal),
                 contentAlignment = Alignment.Center
             ) {
-                ChasingDots()
+                ChasingDots(size = gridSize / 2)
             }
             Box(
                 modifier = Modifier
@@ -44,7 +44,7 @@ fun ShowGrid(
                     .background(MountainMeadow),
                 contentAlignment = Alignment.Center
             ) {
-                DoubleBounce()
+                DoubleBounce(size = DpSize(gridSize / 2, gridSize / 2))
             }
             Box(
                 modifier = Modifier
@@ -52,7 +52,7 @@ fun ShowGrid(
                     .background(StarCommandBlue),
                 contentAlignment = Alignment.Center
             ) {
-                Wave()
+                Wave(size = gridSize / 2)
             }
         }
         Row {
@@ -62,7 +62,7 @@ fun ShowGrid(
                     .background(BattleshipGrey),
                 contentAlignment = Alignment.Center
             ) {
-                WanderingCubes()
+                WanderingCubes(size = DpSize(gridSize / 2, gridSize / 2))
             }
             Box(
                 modifier = Modifier
@@ -70,7 +70,7 @@ fun ShowGrid(
                     .background(MaximumYellowRed),
                 contentAlignment = Alignment.Center
             ) {
-                Pulse()
+                Pulse(size = DpSize(gridSize / 2, gridSize / 2))
             }
             Box(
                 modifier = Modifier
@@ -78,7 +78,7 @@ fun ShowGrid(
                     .background(BurntOrange),
                 contentAlignment = Alignment.Center
             ) {
-                ChasingTwoDots()
+                ChasingTwoDots(size = DpSize(gridSize / 2, gridSize / 2))
             }
             Box(
                 modifier = Modifier
@@ -86,7 +86,7 @@ fun ShowGrid(
                     .background(GOGreen),
                 contentAlignment = Alignment.Center
             ) {
-                ThreeBounce()
+                ThreeBounce(size = DpSize(gridSize / 2, gridSize / 2))
             }
         }
         Row {
@@ -96,7 +96,7 @@ fun ShowGrid(
                     .background(BurntOrange),
                 contentAlignment = Alignment.Center
             ) {
-                Circle()
+                Circle(size = gridSize / 2)
             }
             Box(
                 modifier = Modifier
@@ -104,7 +104,7 @@ fun ShowGrid(
                     .background(Charcoal),
                 contentAlignment = Alignment.Center
             ) {
-                CubeGrid()
+                CubeGrid(size = DpSize(gridSize / 2, gridSize / 2))
             }
             Box(
                 modifier = Modifier
@@ -112,7 +112,7 @@ fun ShowGrid(
                     .background(MountainMeadow),
                 contentAlignment = Alignment.Center
             ) {
-                FadingCircle()
+                FadingCircle(size = gridSize / 2)
             }
             Box(
                 modifier = Modifier
@@ -120,7 +120,7 @@ fun ShowGrid(
                     .background(StarCommandBlue),
                 contentAlignment = Alignment.Center
             ) {
-                FoldingCube()
+                FoldingCube(size = DpSize(gridSize / 2, gridSize / 2))
             }
         }
         Row {
