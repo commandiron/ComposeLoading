@@ -1,6 +1,5 @@
 package com.commandiron.compose_loading
 
-import androidx.annotation.IntRange
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme

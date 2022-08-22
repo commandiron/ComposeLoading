@@ -109,7 +109,7 @@ fun InstaSpinner(
             .size(size)
             .rotate(rotateDegree.value)
     ){
-        val rectSize = Size(width = this.size.width / 6, height = this.size.height / 36)
+        val rectSize = Size(width = this.size.width / 4, height = this.size.height / 24)
         for(i in 0 until 8){
             rotate(45f * i){
                 drawRect(

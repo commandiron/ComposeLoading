@@ -130,7 +130,7 @@ fun ShowGrid(
                     .background(BattleshipGrey),
                 contentAlignment = Alignment.Center
             ) {
-                InstaSpinner()
+                InstaSpinner(size = gridSize / 2)
             }
             Box(
                 modifier = Modifier
