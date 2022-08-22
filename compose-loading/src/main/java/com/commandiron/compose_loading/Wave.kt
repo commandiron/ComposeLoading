@@ -72,7 +72,7 @@ fun Wave(
         easing = EaseInOut
     )
     Row(
-        modifier = modifier.size(size),
+        modifier = modifier,
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center
     ) {

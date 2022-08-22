@@ -12,6 +12,9 @@ import androidx.compose.ui.text.style.TextAlign
 fun InstaSpinner(
     modifier: Modifier = Modifier,
 ) {
+
+
+
     Box(
         modifier = modifier,
         contentAlignment = Alignment.Center
