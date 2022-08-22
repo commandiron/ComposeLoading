@@ -6,14 +6,10 @@ import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.DpSize
-import androidx.compose.ui.unit.dp
 import com.commandiron.compose_loading.*
 import com.commandiron.composeloading.ui.theme.*
 import com.google.accompanist.pager.HorizontalPager
@@ -186,9 +182,14 @@ fun ShowScreen() {
                 }
 
                 13 -> {
-                    InstaSpinner(Modifier
-                        .background(BattleshipGrey)
-                        .fillMaxSize())
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(BattleshipGrey),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        InstaSpinner()
+                    }
                 }
 
                 14 -> {
