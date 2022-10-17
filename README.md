@@ -1,6 +1,7 @@
 # ComposeLoading [![](https://jitpack.io/v/commandiron/ComposeLoading.svg)](https://jitpack.io/#commandiron/ComposeLoading)
 
 
+Add loading spinners in Android Jetpack Compose.
 Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spinkit/) with additionals.
 
 ## How it looks
